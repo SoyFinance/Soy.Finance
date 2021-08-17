@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container" id="about">
       <div class="pt-1">
         <h2 class="title font-beautiful">
           Why <span class="text-success">Soy.</span>Finance?
@@ -54,11 +54,11 @@
       </div>
 
       <div class="btn-section">
-        <button
+        <!-- <button
           class="btn card-button bg-warning-gradient font-regular-medium text-dark border-0 mr-0 mr-md-4 mb-4 mb-md-0"
         >
           Learn more
-        </button>
+        </button> -->
         <a
           class="btn card-button text-white font-regular-medium"
           href="https://callisto.network/"

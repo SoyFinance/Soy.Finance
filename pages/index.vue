@@ -7,17 +7,16 @@
           <span class="text-success font-regular-bold">Decentralized Finance </span
           >ecosystem with emphasis on safety.
         </h1>
-        <p class="text-size text-dark text-center font-regular">
+        <p id="products" class="text-size text-dark text-center font-regular">
           Discover our ecosystem.
         </p>
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
           <a
-            href="/swap"
+            href="https://soyfinance.netlify.app/#/swap"
             rel="noopener noreferrer"
             target="_blank"
-            onclick="return false;"
             class="link rounded-gradiants w-100"
           >
             <img src="~/assets/images/swap.svg" class="w-37 w-lg-25 d-flex m-auto" />
@@ -26,23 +25,20 @@
         </div>
         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
           <a
-            href="/stable"
+            href="https://callisto.network/#ecosystem"
             rel="noopener noreferrer"
             target="_blank"
-            onclick="return false;"
             class="link rounded-gradiants w-100"
           >
             <img src="~/assets/images/soyicon.svg" class="w-37 d-flex m-auto" />
-
             Soy Token</a
           >
         </div>
         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
           <a
-            href="/farm"
+            href="https://soyfinance.netlify.app/#/farms"
             rel="noopener noreferrer"
             target="_blank"
-            onclick="return false;"
             class="link rounded-gradiants w-100"
           >
             <img src="~/assets/images/farmicon.svg" class="w-37 d-flex m-auto" />

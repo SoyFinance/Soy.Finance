@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-dark">
-    <div class="container px-5">
+    <div id="footer" class="container px-5">
       <div class="row">
         <div class="col-md-12 col-xl-5">
           <p class="title font-regular-bold">Safety On Yields</p>
@@ -17,18 +17,26 @@
           <div class="section-size">
             <ul class="pl-0">
               <li class="text my-3">
-                <a href="#" rel="noopener noreferrer" target="_blank" class="text-link"
+                <a
+                  href="https://soyfinance.netlify.app/#/swap"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="text-link"
                   >Exchange</a
                 >
               </li>
               <li class="text my-3">
-                <a href="#" rel="noopener noreferrer" target="_blank" class="text-link"
+                <a
+                  href="https://soyfinance.netlify.app/#/farms"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="text-link"
                   >Yield Farm</a
                 >
               </li>
               <li class="text my-3">
                 <a
-                  href="https://bulls-investing-club.medium.com/"
+                  href="https://callisto.network/#ecosystem"
                   rel="noopener noreferrer"
                   target="_blank"
                   class="text-link"
@@ -43,12 +51,16 @@
           <div class="section-size">
             <ul class="pl-0">
               <li class="text my-3">
-                <a class="text-link" rel="noopener noreferrer" target="_blank" href="#"
+                <a
+                  class="text-link"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://callisto.network/#coreteam"
                   >Soy.Finance Team</a
                 >
               </li>
               <li class="text my-3">
-                <a class="text-link" href="#">Github</a>
+                <a class="text-link" href="https://github.com/SoyFinance/" target="_blank">Github</a>
               </li>
               <li class="text my-3">
                 <a
@@ -110,6 +122,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   data() {
     return {
@@ -190,6 +203,11 @@ export default {
   margin-bottom: 30px;
   @include media-breakpoint-up(md) {
     margin-bottom: 100px;
+  }
+}
+.soon {
+  :hover {
+
   }
 }
 </style>

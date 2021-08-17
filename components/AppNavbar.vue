@@ -18,19 +18,19 @@
           <div class="w-80 d-flex">
             <ul class="navbar-nav ml-auto mr-0 mr-lg-2 text-center text-lg-auto">
               <li class="nav-item">
-                <a class="nav-link px-0" href="#">Products</a>
+                <a class="nav-link px-0" href="/#products">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link px-0" href="#">Documentation</a>
+                <a class="nav-link px-0" href="/#footer">Documentation</a>
               </li>
               <li class="nav-item mb-3 mb-lg-0">
-                <a class="nav-link px-0" href="#">About</a>
+                <a class="nav-link px-0" href="/#about">About</a>
               </li>
             </ul>
           </div>
           <div>
             <button type="button" class="btn btn-unlock" @click="handleUnlock">
-              App - Soon
+              Launch App
             </button>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     handleUnlock() {
-      this.$nuxt.$emit("openUnlockPopup");
+      window.open('https://soyfinance.netlify.app/', '_blank');
     },
 
     handleNavBar() {
