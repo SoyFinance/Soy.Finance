@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
           <a
-            href="https://appsoyfinance.netlify.app/#/swap"
+            href="https://app.soy.finance/#/swap"
             rel="noopener noreferrer"
             target="_blank"
             class="link rounded-gradiants w-100"
@@ -36,7 +36,7 @@
         </div>
         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
           <a
-            href="https://appsoyfinance.netlify.app/#/farms"
+            href="https://app.soy.finance/#/farms"
             rel="noopener noreferrer"
             target="_blank"
             class="link rounded-gradiants w-100"

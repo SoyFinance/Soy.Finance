@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     handleUnlock() {
-      window.open('https://appsoyfinance.netlify.app/', '_blank');
+      window.open('https://app.soy.finance/', '_blank');
     },
 
     handleNavBar() {

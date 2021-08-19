@@ -18,7 +18,7 @@
             <ul class="pl-0">
               <li class="text my-3">
                 <a
-                  href="https://appsoyfinance.netlify.app/#/swap"
+                  href="https://app.soy.finance/#/swap"
                   rel="noopener noreferrer"
                   target="_blank"
                   class="text-link"
@@ -27,7 +27,7 @@
               </li>
               <li class="text my-3">
                 <a
-                  href="https://appsoyfinance.netlify.app/#/farms"
+                  href="https://app.soy.finance/#/farms"
                   rel="noopener noreferrer"
                   target="_blank"
                   class="text-link"
