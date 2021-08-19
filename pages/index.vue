@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
           <a
-            href="https://soyfinance.netlify.app/#/swap"
+            href="https://appsoyfinance.netlify.app/#/swap"
             rel="noopener noreferrer"
             target="_blank"
             class="link rounded-gradiants w-100"
@@ -36,26 +36,24 @@
         </div>
         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
           <a
-            href="https://soyfinance.netlify.app/#/farms"
+            href="https://appsoyfinance.netlify.app/#/farms"
             rel="noopener noreferrer"
             target="_blank"
             class="link rounded-gradiants w-100"
           >
             <img src="~/assets/images/farmicon.svg" class="w-37 d-flex m-auto" />
-
             Yield Farming</a
           >
         </div>
 
         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
           <a
-            href="https://bulls-investing-club.medium.com/"
+            href="https://bullsinvesting.club/"
             rel="noopener noreferrer"
             target="_blank"
             class="link rounded-gradiants w-100"
           >
             <img src="~/assets/images/stablecoin.svg" class="w-37 d-flex m-auto" />
-
             Stablecoin</a
           >
         </div>
