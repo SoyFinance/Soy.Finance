@@ -1,0 +1,100 @@
+.navbar {
+    background: white;
+    padding: 20px 15%;
+    position: absolute;
+    width: 100%;
+}
+.header {
+    background: white;
+    padding: 20px 15%;
+    position: absolute;
+    width: 100%;
+}
+.custom-margin {
+    margin-right: auto;
+}
+.nav-bar {
+    display: flex;
+}
+.nav-bar1 {
+    display: none;
+}
+.font {
+    font-family: 'Gilory Medium';
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #000;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    font-family: 'Lato';
+    white-space: nowrap;
+    &:hover {
+        font-weight: bold;
+    }
+}
+@media all and (max-width: 1420px) {
+    .custom-margin {
+        margin-right: 0px !important;
+    }
+    .navbar {
+        padding: 20px 5% 10px 12%;
+    }
+    .header {
+        padding: 20px 5% 10px 12%;
+    }
+}
+@media all and (max-width: 560px) {
+    .navbar {
+        padding: 10px 10px 0 0;
+    }
+    .header {
+        padding: 10px 10px 0 0;
+    }
+    .navbar-collapse {
+        padding-left: 25px;
+        z-index: 99;
+        // background-color: #d8dfad;
+        margin-left: 10px;
+    }
+}
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+    color: #000;
+}
+.navbar-dark .navbar-toggler {
+    background-color: white;
+    color: #000;
+    border-color: rgba(255,255,255,.1);
+    z-index: 999;
+}
+.sticky-top {
+    z-index: auto;
+}
+.navbar-nav .dropdown-menu {
+    background-color: white;
+    border: none;
+}
+.dropdown-item {
+    background-color: white;
+    color: #000;
+    &:hover {
+        background-color: white;
+        font-weight: 700;
+    }
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: black;
+    background-color: white;
+    font-weight: 700;
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: black;
+    font-weight: bold;
+}
+.navbar-dark .navbar-toggler-icon {
+    background-image: url('../../assets/images/mobile/1/menu.png');
+}
+.navbar-collapse {
+    z-index: 99;
+}

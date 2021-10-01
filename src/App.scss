@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Beautiful';
+    src: local('Beautiful'), url(./assets/fonts/bppu.ttf) format('opentype');
+}
+
+.nav_right {
+    justify-content: flex-end;
+}
+.p10 {
+    padding: 10px;
+}
+html {
+    scroll-behavior: smooth;
+}
+.padding {
+    padding: 0 10%;
+    @media screen and (max-width: 768px) {
+        padding: 0 20px;
+    }
+}
+.between {
+    justify-content: space-between;
+}
+.row {
+    display: flex;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    align-items: center;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-center {
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+::-webkit-scrollbar-thumb {
+    background: #587C18 !important;
+}
+.center {
+    justify-content: center;
+}
+@keyframes hideshow {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.5;}
+    50%  {opacity: 1;}
+    75%  {opacity: 0.5;}
+    100% {opacity: 0;}
+}
+
+@keyframes show1 {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.25;}
+    50%  {opacity: 0.5;}
+    75%  {opacity: 0.75;}
+    100% {opacity: 1;}
+}
+
+@keyframes rotate {
+    0%   {
+        transform: rotate(90deg);
+    }
+    25%  {
+        transform: rotate(75deg);
+    }
+    50%  {
+        transform: rotate(50deg);
+    }
+    75%  {
+        transform: rotate(25deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes y-axis-animation {
+    from {transform: rotateY(30deg)}
+    to {transform: rotateY(-30deg)}
+  }
+body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duration='4000']{
+    transition-duration: 4000ms;
+}
+body [data-aos-delay='8000'][data-aos].aos-animate,[data-aos][data-aos][data-aos-delay='8000'].aos-animate {
+    transition-delay: 8000ms;
+}
+
+[data-aos="rotate-ac"] {
+    transform: rotate(90deg);
+    transition-property: transform;
+  }
+  
+  [data-aos="rotate-ac"].aos-animate {
+    transform: rotate(0deg);
+}

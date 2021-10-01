@@ -1,0 +1,10 @@
+{
+  "short_name": "Callisto Network",
+  "name": "CryptoBots Landing",
+  "icons": [
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FFFFFF",
+  "background_color": "#000000"
+}
