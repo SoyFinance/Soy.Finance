@@ -74,14 +74,15 @@
     z-index: auto;
 }
 .navbar-nav .dropdown-menu {
-    background-color: transparent;
+    background-color: #d8dfad;
+    max-width: 180px;
     border: none;
 }
 .dropdown-item {
-    background-color: transparent;
+    background-color: #d8dfad;
     color: #000;
     &:hover {
-        background-color: transparent;
+        background-color: #d8dfad;
         font-weight: 700;
     }
 }
