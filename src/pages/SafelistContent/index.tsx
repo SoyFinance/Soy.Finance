@@ -85,7 +85,7 @@ const SafelistContent = () => {
             </BottomDiv>
             <Spacer height="60px" />
             <Text color={Theme.colors.primary}>{t('Tip: Mentioning your interest in SOY Finance on your social media is always appreciated.')}</Text>
-            <Spacer height="60px" />
+            <Spacer height="100px" />
         </Container>
     )
 }

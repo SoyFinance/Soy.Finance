@@ -119,6 +119,7 @@ const TokenomicContent = () => {
                 <Text color='#767676'>{t('A full description of Soy Tokenomic can be found in the')}<StyledLi href="https://soy-finance.medium.com/soy-finance-monetary-policy-vision-4f07a1b48372" target="_blank" color='#615EFF'>&nbsp;{t('SOY Monetary Policy.')}</StyledLi></Text>
                 <Spacer height="20px" />
             </TopDiv>
+            <Spacer height="100px" />
         </Container>
     )
 }
