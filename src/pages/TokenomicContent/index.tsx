@@ -37,6 +37,21 @@ const TokenomicContent = () => {
                 <Spacer height="20px" />
                 <Row>
                     <Circle />
+                    <Text color='#767676'>{t('5% will be allocated to Callisto Enterprise.')}</Text>
+                </Row>
+                <Spacer height="20px" />
+                <Row>
+                    <Circle />
+                    <Text color='#767676'>{t('5% will be allocated to the Callisto team members via a dynamic motivation system for the team members to support the project development in the time.')}</Text>
+                </Row>
+                <Spacer height="20px" />
+                <Row>
+                    <Circle />
+                    <Text color='#767676'>{t('5% will be used for bug bounty programs to ensure high-security services.')}</Text>
+                </Row>
+                <Spacer height="20px" />
+                <Row>
+                    <Circle />
                     <Text color='#767676'>{t('10% will be airdropped in 7 consecutive phases, the details of each phase being announced at the time of its launch.')}</Text>
                 </Row>
                 <Spacer height="20px" />
@@ -67,21 +82,6 @@ const TokenomicContent = () => {
                 <Row2>
                     <Text color={Theme.colors.primary}><b>{t('Phase 7')}</b><Text2 color='#767676'>&nbsp;{t('- Harvesting Soy - Details to be published on 10/01/22.')}</Text2></Text>
                 </Row2>
-                <Spacer height="20px" />
-                <Row>
-                    <Circle />
-                    <Text color='#767676'>{t('5% will be allocated to Callisto Enterprise.')}</Text>
-                </Row>
-                <Spacer height="20px" />
-                <Row>
-                    <Circle />
-                    <Text color='#767676'>{t('5% will be allocated to the Callisto team members via a dynamic motivation system for the team members to support the project development in the time.')}</Text>
-                </Row>
-                <Spacer height="20px" />
-                <Row>
-                    <Circle />
-                    <Text color='#767676'>{t('5% will be used for bug bounty programs to ensure high-security services.')}</Text>
-                </Row>
                 <Spacer height="40px" />
                 <SubTitle color={Theme.colors.bgscondary}>{t('Transaction Fees Distribution')}</SubTitle>
                 <Spacer height="40px" />
