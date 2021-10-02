@@ -16,23 +16,20 @@ function shortenNumber(value: number) {
         return parsed;
     } 
     if( parsed.length < 7) {
-      const newValue = (value/1000)
+      const newValue = (value/10)
       const ret = newValue.toString()
-      const arr = ret.split('.')
-      const realRet = arr.length > 1 ? `${arr[0]}.${arr[1].substring(0,2).replace(/^0+|0+$/g, "")}`: arr[0]
+      const realRet = parseInt(ret) / 100
       return `${realRet}K`
     }
     if( parsed.length < 10 ) {
-      const newValue = (value/1000000)
+      const newValue = (value/10000)
       const ret = newValue.toString()
-      const arr = ret.split('.')
-      const realRet = arr.length > 1 ? `${arr[0]}.${arr[1].substring(0,2).replace(/^0+|0+$/g, "")}`: arr[0]
+      const realRet = parseInt(ret) / 100
       return `${realRet}M`
     }
-    const newValue = (value/1000000000)
+    const newValue = (value/10000000)
     const ret = newValue.toString()
-    const arr = ret.split('.')
-    const realRet = arr.length > 1 ? `${arr[0]}.${arr[1].substring(0,2).replace(/^0+|0+$/g, "")}`: arr[0]
+    const realRet = parseInt(ret) / 100
     return `${realRet}B`
 }
 
