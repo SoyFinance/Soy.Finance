@@ -42,8 +42,18 @@ const PageFooter = () => {
                                 <Text><b>{t('Callisto Enterprise')}</b></Text>
                             </RightsdivWeb>
                         </Itemdiv>
-                        <Itemdiv>
-                            
+                        <Itemdiv>                            
+                            <Text><b>{t('Soy Finance')}</b></Text>
+                            <Spacer height="10px" />
+                            <StyledLi href="https://clo.click/how_to" target="_blank">{t('Tutorials')}</StyledLi>
+                            <Spacer height="10px" />
+                            <StyledLi href="/roadmap">{t('Roadmap')}</StyledLi>
+                            <Spacer height="10px" />
+                            <StyledLi href="/safelist">{t('Safelisting')}</StyledLi>
+                            <Spacer height="10px" />
+                            <StyledLi href="https://bullsinvesting.club/" target="_blank">{t('BUSDT Stablecoin')}</StyledLi>
+                        </Itemdiv>
+                        <Itemdiv>                            
                             <Text><b>{t('Resources')}</b></Text>
                             <Spacer height="10px" />
                             <StyledLi href="https://callistoenterprise.com/team" target="_blank">{t('Team')}</StyledLi>
@@ -53,24 +63,13 @@ const PageFooter = () => {
                             <StyledLi href="https://callisto.network/" target="_blank">{t('Callisto Network')}</StyledLi>
                             <Spacer height="10px" />
                             <StyledLi href="https://callistoenterprise.com/" target="_blank">{t('Callisto Enterprise')}</StyledLi>
-                            {/* <Text><b>{t('Soy Finance')}</b></Text>
-                            <Spacer height="10px" />
-                            <StyledLi href="https://clo.click/how_to" target="_blank">{t('Tutorials')}</StyledLi>
-                            <Spacer height="10px" />
-                            <StyledLi href="/roadmap">{t('Roadmap')}</StyledLi>
-                            <Spacer height="10px" />
-                            <StyledLi href="/safelist">{t('Safelisting')}</StyledLi>
-                            <Spacer height="10px" />
-                            <StyledLi href="https://bullsinvesting.club/" target="_blank">{t('BUSDT Stablecoin')}</StyledLi> */}
                         </Itemdiv>
-                        {/* <Itemdiv>
-                            
-                        </Itemdiv> */}
                         
                     </Row2>
+                    <Spacer2 />
                     <Row2>
                         <Itemdiv2>
-                        <Text><b>{t('Documentation')}</b></Text>
+                            <Text><b>{t('Documentation')}</b></Text>
                             <Spacer height="10px" />
                             <StyledLi href="https://callisto.network/soy-finance-soy-security-audit/" target="_blank">{t('Platform Audit Report')}</StyledLi>
                             <Spacer height="10px" />
@@ -107,7 +106,7 @@ const PageFooter = () => {
                         <Spacer height="5px" />
                         <Text><b>{t('Callisto Enterprise')}</b></Text>
                     </div>
-                    {/* <div>
+                    <div>
                         <Text><b>{t('Soy Finance')}</b></Text>
                         <Spacer height="10px" />
                         <StyledLi href="https://clo.click/how_to" target="_blank">{t('Tutorials')}</StyledLi>
@@ -117,7 +116,7 @@ const PageFooter = () => {
                         <StyledLi href="/safelist">{t('Safelisting')}</StyledLi>
                         <Spacer height="10px" />
                         <StyledLi href="https://bullsinvesting.club/" target="_blank">{t('BUSDT Stablecoin')}</StyledLi>
-                    </div> */}
+                    </div>
                     <div>
                         <Text><b>{t('Resources')}</b></Text>
                         <Spacer height="10px" />
@@ -186,6 +185,16 @@ const Footer = styled.div`
         margin-top: -300px;
     }
 `;
+const Spacer2 = styled.div`
+    display: none;
+    @media screen and (max-width: 1224px) {
+        display: block;
+        height: 50px;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`
 const WebDiv = styled.div`
     display: block;
     width: 100%;
@@ -262,7 +271,7 @@ const Flex = styled.div`
     padding: 100px 12% 50px;
     position: relative;
     z-index: 2;
-    @media (max-width: 1004px) {
+    @media (max-width: 1224px) {
         flex-direction: column;
         // align-items: center;
     }
