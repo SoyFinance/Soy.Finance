@@ -36,7 +36,7 @@ const Safelistheader: React.FC = () => {
                         <NavDropdown title={t('Soy Finance')} id="collasible-nav-dropdown">
                             <NavDropdown.Item href="https://clo.click/how_to" target="_blank">{t('Tutorials')}</NavDropdown.Item>
                             <NavDropdown.Item href="/roadmap">{t('Roadmap')}</NavDropdown.Item>
-                            <NavDropdown.Item href="/tokenomic">{t('SOY Tokenomic')}</NavDropdown.Item>
+                            <NavDropdown.Item href="/tokenomic">{t('SOY Tokenomics')}</NavDropdown.Item>
                             <NavDropdown.Item href="/safelist">{t('Safelisting')}</NavDropdown.Item>
                             <NavDropdown.Item href="https://bullsinvesting.club/" target="_blank">{t('BUSDT Stable Coin')}</NavDropdown.Item>
                         </NavDropdown>
