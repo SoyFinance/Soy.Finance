@@ -11,6 +11,7 @@ const Home = lazy(() => import('./pages'));
 const Safelist = lazy(() => import('./pages/Safelist'));
 const Tokenomic = lazy(() => import('./pages/Tokenomic'));
 const Roadmap = lazy(() => import('./pages/Roadmap'));
+const Airdrop = lazy(() => import('./pages/Airdrop'));
 
 const App: React.FC = () => {
 
@@ -31,6 +32,9 @@ const App: React.FC = () => {
                     </Route>
                     <Route path="/roadmap" exact>
                         <Roadmap />
+                    </Route>
+                    <Route path="/airdrop" exact>
+                        <Airdrop />
                     </Route>
                 </Switch>
             </SuspenseWithChunkError>

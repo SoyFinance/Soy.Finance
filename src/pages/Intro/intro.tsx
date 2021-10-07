@@ -32,13 +32,17 @@ const Intro = () => {
             <LiButton href="https://app.soy.finance/#/swap" target="_blank">
                 {t('Launch Soy Finance')}
             </LiButton>
+            <Spacer height="20px" />
+            <LiButton2 href="/airdrop">
+                {t('SOY Airdrop')}
+            </LiButton2>
             <StyledVideo autoPlay muted loop id="main">
                 <source src="Main.mp4" type="video/mp4"/>
             </StyledVideo>
             <StyledVideoMob autoPlay muted loop id="main">
                 <source src="Mainmobile.mp4" type="video/mp4"/>
             </StyledVideoMob>
-            <ScrollDiv  onClick={handleScroll}>
+            <ScrollDiv onClick={handleScroll}>
                 <SideImageMob src={Assets.scrolling} alt=""/>
             </ScrollDiv>
         </Container>
@@ -134,6 +138,28 @@ const LiButton = styled.a`
     z-index: 9;
     display: none;
 
+    &:hover {
+        color: #000;
+    }
+    @media screen and (max-width: 768px) {
+        display: block;
+
+        margin: 0px;
+        // max-width: 200px;
+    }
+`
+const LiButton2 = styled.a`
+    color: white;
+    background-color: ${Theme.colors.bgscondary};
+    font-size: 16px;
+    font-weight: 700;
+    font-family: ${Theme.fonts.text};
+    height: 35px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-decoration: none !important;
+    white-space: nowrap;
+    z-index: 9;
     &:hover {
         color: #000;
     }

@@ -39,6 +39,9 @@ import mobart from 'assets/images/4section/mobart.png'
 import mobback5 from 'assets/images/mobback5.png'
 import footermob from 'assets/images/FooterMob.png'
 import roadmap from 'assets/images/Roadmap.jpg'
+import soywhite from 'assets/images/whitesoy.png'
+import airback from 'assets/images/BG.png'
+import ufo from 'assets/images/UFO.png'
 
 export const Assets = {
     logo,
@@ -81,5 +84,8 @@ export const Assets = {
     mobback5,
     footermob,
     mobmetricbg,
-    roadmap
+    roadmap,
+    soywhite,
+    airback,
+    ufo
 }

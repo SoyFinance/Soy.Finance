@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import Safelistheader from 'components/Header/Safelistheader';
-import TokenomicContent from './TokenomicContent';
-import PageFooter from './PageFooter';
+import AirdropContent from './AirdropContent';
+import PageFooter from './PageFooter2';
 import 'aos/dist/aos.css';
 
 const Container = styled.div`
@@ -15,7 +15,7 @@ const Tokenomic: React.FC = () => {
     return (
         <Container>
             <Safelistheader />
-            <TokenomicContent />
+            <AirdropContent />
             <PageFooter />
         </Container>
     )
