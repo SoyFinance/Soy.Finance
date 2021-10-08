@@ -163,25 +163,25 @@ const AirdropContent = () => {
                 <Title color={Theme.colors.white}>{t('Claim Your SOY Tokens')}</Title>
                 <Line />
                 <GetButton onClick={() => handleLogin()}>
-                    <Text align="center" color={Theme.colors.white} >{account? shortenAddress(account) : 'Connect Wallet'}</Text>
+                    <Text align="center" color={Theme.colors.white} >{account? shortenAddress(account) : t('Connect Wallet')}</Text>
                 </GetButton>
                 <Spacer height="20px" />
                 <FlexBetween>
                     <div>
-                        <Text align="left" color={Theme.colors.white} >YOUR BALANCE:</Text>
+                        <Text align="left" color={Theme.colors.white} >{t('YOUR BALANCE:')}</Text>
                         <TextBold>{soyBalance}</TextBold>
-                        <Text align="left" color={Theme.colors.white} >Details:</Text>
+                        <Text align="left" color={Theme.colors.white} >{t('Details:')}</Text>
                     </div>
                     <img src={Assets.soywhite} alt="" />
                 </FlexBetween>
                 <Spacer height="5px" />
-                <Text align="center" color={Theme.colors.white} >Balance is updated every 24 hours.</Text>
+                <Text align="center" color={Theme.colors.white} >{t('Balance is updated every 24 hours.')}</Text>
                 <Spacer height="10px" />
-                <Text align="center" color={Theme.colors.white} >First Airdrop will starts on 15/10/2021.</Text>
+                <Text align="center" color={Theme.colors.white} >{t('First Airdrop will starts on 15/10/2021.')}</Text>
                 <Spacer height="40px" />
-                <TextB color="#7EA224">Note:</TextB>
+                <TextB color="#7EA224">{t('Note:')}</TextB>
                 <Spacer height="10px" />
-                <Text align="left" color={Theme.colors.white} >CLO coins are required to perform transactions on Callisto Network (1 CLO is enough).</Text>
+                <Text align="left" color={Theme.colors.white} >{t('CLO coins are required to perform transactions on Callisto Network (1 CLO is enough).')}</Text>
                 <Spacer height="20px" />
             </StyledModal>
             <Spacer height="100px" />
