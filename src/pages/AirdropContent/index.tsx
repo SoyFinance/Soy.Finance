@@ -81,10 +81,10 @@ const GetButton = styled.button`
         background-color: rgba(126, 162, 36, .8);
     }
 `
-const Text = styled.p<{color: string; align?: string}>`
+const Text = styled.p<{color: string; align?: string; weight?: string}>`
     color: ${({color}) => color};
     font-family: ${Theme.fonts.text};
-    font-weight: 400;
+    font-weight: ${({weight}) => weight};
     font-size: 14.38px;
     line-height: 18px;
     letter-space: 0.29px;
@@ -170,18 +170,20 @@ const AirdropContent = () => {
                     <div>
                         <Text align="left" color={Theme.colors.white} >{t('YOUR BALANCE:')}</Text>
                         <TextBold>{soyBalance}</TextBold>
-                        <Text align="left" color={Theme.colors.white} >{t('Details:')}</Text>
+                        <Text align="left" color={Theme.colors.white} weight="bold">{t('Details:')}:</Text>
+                        <Spacer height="2px" />
+                        <Text align="left" color={Theme.colors.white} >{t('Locking day remaining')}:</Text>
                     </div>
                     <img src={Assets.soywhite} alt="" />
                 </FlexBetween>
-                <Spacer height="5px" />
-                <Text align="center" color={Theme.colors.white} >{t('Balance is updated every 24 hours.')}</Text>
-                <Spacer height="10px" />
-                <Text align="center" color={Theme.colors.white} >{t('First Airdrop will starts on 15/10/2021.')}</Text>
+                <Spacer height="20px" />
+                <Text align="left" color={Theme.colors.white} >{t('The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.')}</Text>
                 <Spacer height="40px" />
                 <TextB color="#7EA224">{t('Note:')}</TextB>
                 <Spacer height="10px" />
-                <Text align="left" color={Theme.colors.white} >{t('CLO coins are required to perform transactions on Callisto Network (1 CLO is enough).')}</Text>
+                <Text align="left" color={Theme.colors.white} >&quot;{t('Balance is updated every 24 hours.')}&quot;</Text>
+                <Spacer height="5px" />
+                <Text align="left" color={Theme.colors.white} >&quot;{t('First Airdrop will starts on 15/10/2021.')}&quot;</Text>
                 <Spacer height="20px" />
             </StyledModal>
             <Spacer height="100px" />
