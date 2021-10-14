@@ -1,4 +1,5 @@
 import logo from 'assets/images/soy_black.png'
+import token from 'assets/images/token.png'
 import scrolling from 'assets/images/scrolling.png'
 import metricbg from 'assets/images/metricbg.png'
 import mark3 from 'assets/images/mark3.png'
@@ -45,6 +46,7 @@ import ufo from 'assets/images/UFO.png'
 
 export const Assets = {
     logo,
+    token,
     scrolling,
     metricbg,
     mark3,

@@ -7,6 +7,9 @@ import { useTranslation } from 'contexts/Localization'
 import { Theme } from 'constants/theme'
 import Spacer from 'components/Spacer'
 import { Assets } from 'constants/images'
+import contracts from 'constants/contracts';
+import { registerToken } from 'hooks/wallet';
+import useTokenBalance, { BIG_100, getBalanceAmount } from 'hooks/useTokenBalance';
 import { ConnectorNames } from '../../constants'
 
 const Container = styled.div`
@@ -70,6 +73,22 @@ const GetButton = styled.button`
     background-color: #7EA224;
     align-items: center;
     border: none;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 3px rgba(228, 92, 49,.1);
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(126, 162, 36, .8);
+    }
+`
+const AddButton = styled.button`
+    display: flex;
+    border: 2px solid #7EA224;
+    background-color: #4B1510;
+    align-items: center;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -145,7 +164,8 @@ const AirdropContent = () => {
     const { account } = useWeb3React()
     const { login, logout } = useAuth()
 
-    const soyBalance = '0.00'
+    const bigSoybalance = useTokenBalance(contracts.soyToken)
+    const soyBalance = bigSoybalance ? parseInt((getBalanceAmount(bigSoybalance.balance).times(BIG_100)).toString()) / 100 : 0
 
     const handleLogin = () => {
         if( account ) {
@@ -169,13 +189,18 @@ const AirdropContent = () => {
                 <FlexBetween>
                     <div>
                         <Text align="left" color={Theme.colors.white} >{t('YOUR BALANCE:')}</Text>
-                        <TextBold>{soyBalance}</TextBold>
+                        <TextBold>{soyBalance.toFixed(2)}</TextBold>
                         <Text align="left" color={Theme.colors.white} weight="bold">{t('Details:')}:</Text>
                         <Spacer height="2px" />
                         <Text align="left" color={Theme.colors.white} >{t('Locking day remaining')}:</Text>
                     </div>
                     <img src={Assets.soywhite} alt="" />
                 </FlexBetween>
+                <Spacer height="20px" />
+                <AddButton onClick={() => registerToken(contracts.soyToken, "SOY", 18)}>
+                    <img src={Assets.token} alt="" style={{height: 30, marginRight: 10}}/>
+                    <Text align="center" color={Theme.colors.white} >{t('Add to Metamask')}</Text>
+                </AddButton>
                 <Spacer height="20px" />
                 <Text align="left" color={Theme.colors.white} >{t('The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.')}</Text>
                 <Spacer height="40px" />

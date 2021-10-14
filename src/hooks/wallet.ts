@@ -54,7 +54,7 @@ export const registerToken = async (tokenAddress: string, tokenSymbol: string, t
         address: tokenAddress,
         symbol: tokenSymbol,
         decimals: tokenDecimals,
-        image: `https://choamtoken.com/images/tokens/${tokenAddress}.png`,
+        image: `https://soy.finance/images/${tokenAddress}.png`,
       },
     },
   })
