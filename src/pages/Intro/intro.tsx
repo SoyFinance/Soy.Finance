@@ -60,12 +60,13 @@ const Container = styled.div`
 
 const ScrollDiv = styled.div`
     position: absolute;
-    bottom: 50px;
+    bottom: 80px;
     left: calc(50% - 10px);
     width: 30px;
     height: 50px;
     border-radius: 5px;
     padding: 3px;
+    z-index: 99999;
     &:hover {
         background-color: rgba(126, 162, 36, .7);
     }
