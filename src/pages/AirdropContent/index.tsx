@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core';
 import { getAddress } from "@ethersproject/address";
 import styled from 'styled-components'
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import useAuth from 'hooks/useAuth';
 import { useTranslation } from 'contexts/Localization'
 import { Theme } from 'constants/theme'
@@ -9,7 +10,8 @@ import Spacer from 'components/Spacer'
 import { Assets } from 'constants/images'
 import contracts from 'constants/contracts';
 import { registerToken } from 'hooks/wallet';
-import useTokenBalance, { BIG_100, getBalanceAmount } from 'hooks/useTokenBalance';
+import { BIG_100, getBalanceAmount, GetAirdropInfo } from 'hooks/useTokenBalance';
+import { BigNumber } from 'bignumber.js';
 import { ConnectorNames } from '../../constants'
 
 const Container = styled.div`
@@ -135,6 +137,17 @@ const FlexBetween = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: flex-start;
+    @media screen and (max-width: 768px) {
+        padding: 10px;
+    }
+`
+
+const Column= styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
     background-color: #7EA224;
     border-radius: 20px;
     padding: 20px;
@@ -143,7 +156,6 @@ const FlexBetween = styled.div`
         padding: 10px;
     }
 `
-
 function isAddress(value) {
     try {
         return getAddress(value);
@@ -159,13 +171,39 @@ function shortenAddress(address, chars = 4) {
     return `${parsed.substring(0, chars + 2)}...${parsed.substring(42 - chars)}`;
 }
 
+const oneDaySeconds = 24 * 3600
+
 const AirdropContent = () => {
     const { t } = useTranslation()
-    const { account } = useWeb3React()
+    const { account, library } = useWeb3React()
     const { login, logout } = useAuth()
 
-    const bigSoybalance = useTokenBalance(contracts.soyToken)
-    const soyBalance = bigSoybalance ? parseInt((getBalanceAmount(bigSoybalance.balance).times(BIG_100)).toString()) / 100 : 0
+  const [lockPeriod, setLockPeriod] = useState(0);
+  const [userInfo, setUserInfo] = useState(null);
+  const [Airdrops, setAirdrops] = useState(null);
+  const [balance, setBalance] = useState(0);
+  const [showDetail, setShowDetail] = useState(false);
+
+    useEffect(() => {
+        const init = async () => {
+            const {
+                lockperiod,
+                userinfo,
+                airdrops,
+            } = await GetAirdropInfo(account, library);
+            setLockPeriod(parseInt(lockperiod))
+            setUserInfo(userinfo)
+            setAirdrops(airdrops)
+            const bigBalance = userinfo.reduce(reducer);
+            setBalance(parseFloat(getBalanceAmount(new BigNumber(bigBalance.amount._hex)).toString()));
+        }
+        if (account){
+            init();
+        }
+    }, [account, library])
+    
+    const reducer = (previousValue, currentValue) => previousValue.amount.add(currentValue.amount);
+    const soyBalance = parseInt((balance * 100).toString()) / 100;
 
     const handleLogin = () => {
         if( account ) {
@@ -175,6 +213,11 @@ const AirdropContent = () => {
         }
     }
 
+    function toDateTime(secs) {
+        const date = new Date(1970, 0, 1); // Epoch
+        date.setSeconds(secs);
+        return date;
+    }
     return (
         <Container>
             <Img src={Assets.airback} alt="" />
@@ -186,16 +229,64 @@ const AirdropContent = () => {
                     <Text align="center" color={Theme.colors.white} >{account? shortenAddress(account) : t('Connect Wallet')}</Text>
                 </GetButton>
                 <Spacer height="20px" />
-                <FlexBetween>
-                    <div>
-                        <Text align="left" color={Theme.colors.white} >{t('YOUR BALANCE:')}</Text>
-                        <TextBold>{soyBalance.toFixed(2)}</TextBold>
-                        <Text align="left" color={Theme.colors.white} weight="bold">{t('Details:')}:</Text>
-                        <Spacer height="2px" />
-                        <Text align="left" color={Theme.colors.white} >{t('Locking day remaining')}:</Text>
-                    </div>
-                    <img src={Assets.soywhite} alt="" />
-                </FlexBetween>
+                <Column>
+                    <FlexBetween>
+                        <div>
+                            <Text align="left" color={Theme.colors.white} >{t('YOUR BALANCE:')}</Text>
+                            <TextBold>{soyBalance.toFixed(2)}</TextBold>
+                            <Spacer height="10px" />
+                            <Row onClick={()=>setShowDetail(!showDetail)}>
+                                <Text align="left" color={Theme.colors.white} weight="bold">{t('Details:')}:</Text>
+                                {
+                                    showDetail?
+                                    <FiChevronUp color={Theme.colors.white} size={24} />:
+                                    <FiChevronDown color={Theme.colors.white} size={24} />
+                                }
+                            </Row>
+                            <Spacer height="2px" />
+                            {/* <Text align="left" color={Theme.colors.white} >{t('Locking day remaining')}:</Text> */}
+                        </div>
+                        <img src={Assets.soywhite} alt="" />
+                    </FlexBetween>
+                    {
+                        showDetail && account &&
+                        <DetailContent>
+                            <Row2>
+                                <TbDiv>
+                                    <Text align="left" color={Theme.colors.white} >{t('PhaseId')}</Text>
+                                </TbDiv>
+                                <TbDiv>
+                                    <Text align="left" color={Theme.colors.white} >{t('Balance')}</Text>
+                                </TbDiv>
+                                <TbDiv2>
+                                    <Text align="right" color={Theme.colors.white} >{t('Claim Date')}</Text>
+                                </TbDiv2>
+                            </Row2>
+                            {
+                                Airdrops?.map((item, index) => {
+                                    // const duration = parseInt(item.duration._hex)
+                                    // const daysPassed = parseInt(item.daysPassed._hex)
+                                    const datetime = toDateTime(parseInt(userInfo[index].timestamp._hex) + lockPeriod * oneDaySeconds).toString();
+
+                                    // if( duration > daysPassed ) return null;
+                                    return (
+                                        <Row2 key={(item.daysPassed)}>
+                                            <TbDiv>
+                                                <Text align="left" color={Theme.colors.white} >{index+1}</Text>
+                                            </TbDiv>
+                                            <TbDiv>
+                                                <Text align="left" color={Theme.colors.white} >{parseInt((getBalanceAmount(new BigNumber(userInfo[index].amount._hex)).times(BIG_100).toString())) / 100}</Text>
+                                            </TbDiv>
+                                            <TbDiv2>
+                                                <Text align="right" color={Theme.colors.white} >{datetime.substring(0, 15)}</Text>
+                                            </TbDiv2>
+                                        </Row2>
+                                    )
+                                })
+                            }
+                        </DetailContent>
+                    }
+                </Column>
                 <Spacer height="20px" />
                 <AddButton onClick={() => registerToken(contracts.soyToken, "SOY", 18)}>
                     <img src={Assets.token} alt="" style={{height: 30, marginRight: 10}}/>
@@ -231,5 +322,34 @@ const Title = styled.p<{color: string}>`
     }
     @media screen and (max-width: 573px ) {
     }
+`
+const Row = styled.div`
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 5px;
+    border-radius: 10px;
+    border: 1px solid white;
+    &:hover {
+        cursor: pointer;
+        background-color: #4B1510;
+    }
+`
+const DetailContent = styled.div`
+    width: 100%;
+`
+const Row2 = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 5px;
+`
+const TbDiv = styled.div`
+    width: 25%;
+`
+const TbDiv2 = styled.div`
+    width: 50%;
 `
 export default AirdropContent;

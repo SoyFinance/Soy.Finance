@@ -1,0 +1,215 @@
+[
+  {
+    "type": "constructor",
+    "stateMutability": "nonpayable",
+    "inputs": [{ "type": "address", "name": "_token", "internalType": "address" }]
+  },
+  {
+    "type": "event",
+    "name": "AirdropCreated",
+    "inputs": [
+      { "type": "uint256", "name": "airdropId", "internalType": "uint256", "indexed": false },
+      { "type": "uint256", "name": "amount", "internalType": "uint256", "indexed": false },
+      { "type": "uint256", "name": "duration", "internalType": "uint256", "indexed": false }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Airdropped",
+    "inputs": [
+      { "type": "uint256", "name": "airdropId", "internalType": "uint256", "indexed": true },
+      { "type": "address", "name": "user", "internalType": "address", "indexed": true },
+      { "type": "uint256", "name": "amount", "internalType": "uint256", "indexed": false }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      { "type": "address", "name": "previousOwner", "internalType": "address", "indexed": true },
+      { "type": "address", "name": "newOwner", "internalType": "address", "indexed": true }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Rescue",
+    "inputs": [
+      { "type": "address", "name": "_token", "internalType": "address", "indexed": false },
+      { "type": "uint256", "name": "_amount", "internalType": "uint256", "indexed": false }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SetSystem",
+    "inputs": [{ "type": "address", "name": "_system", "internalType": "address", "indexed": false }],
+    "anonymous": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "addUsers",
+    "inputs": [
+      { "type": "uint256", "name": "airdropId", "internalType": "uint256" },
+      { "type": "uint256", "name": "day", "internalType": "uint256" },
+      { "type": "address[]", "name": "users", "internalType": "address[]" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      { "type": "uint256", "name": "amount", "internalType": "uint256" },
+      { "type": "uint256", "name": "duration", "internalType": "uint256" },
+      { "type": "uint256", "name": "daysPassed", "internalType": "uint256" }
+    ],
+    "name": "airdrops",
+    "inputs": [{ "type": "uint256", "name": "", "internalType": "uint256" }]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "claimToken",
+    "inputs": [
+      { "type": "uint256", "name": "airdropId", "internalType": "uint256" },
+      { "type": "address[]", "name": "users", "internalType": "address[]" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "closeDay",
+    "inputs": [
+      { "type": "uint256", "name": "airdropId", "internalType": "uint256" },
+      { "type": "uint256", "name": "day", "internalType": "uint256" },
+      { "type": "uint256", "name": "totalParticipants", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [{ "type": "uint256", "name": "airdropId", "internalType": "uint256" }],
+    "name": "createAirdrop",
+    "inputs": [
+      { "type": "uint256", "name": "amount", "internalType": "uint256" },
+      { "type": "uint256", "name": "duration", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "uint256", "name": "", "internalType": "uint256" }],
+    "name": "getAirdropsLength",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "tuple[]",
+        "name": "",
+        "internalType": "struct Airdrop.User[]",
+        "components": [
+          { "type": "uint256", "name": "timestamp", "internalType": "uint256" },
+          { "type": "uint256", "name": "amount", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "name": "getUserInfo",
+    "inputs": [{ "type": "address", "name": "user", "internalType": "address" }]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "uint256", "name": "", "internalType": "uint256" }],
+    "name": "lockPeriod",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "address", "name": "", "internalType": "address" }],
+    "name": "owner",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      { "type": "uint256", "name": "totalParticipants", "internalType": "uint256" },
+      { "type": "uint256", "name": "addedParticipants", "internalType": "uint256" }
+    ],
+    "name": "participants",
+    "inputs": [
+      { "type": "uint256", "name": "", "internalType": "uint256" },
+      { "type": "uint256", "name": "", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      { "type": "uint256", "name": "timestamp", "internalType": "uint256" },
+      { "type": "uint256", "name": "amount", "internalType": "uint256" }
+    ],
+    "name": "receivers",
+    "inputs": [
+      { "type": "uint256", "name": "", "internalType": "uint256" },
+      { "type": "address", "name": "", "internalType": "address" }
+    ]
+  },
+  { "type": "function", "stateMutability": "nonpayable", "outputs": [], "name": "renounceOwnership", "inputs": [] },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "rescueTokens",
+    "inputs": [{ "type": "address", "name": "_token", "internalType": "address" }]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "setSystem",
+    "inputs": [{ "type": "address", "name": "_system", "internalType": "address" }]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "address", "name": "", "internalType": "address" }],
+    "name": "system",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "address", "name": "", "internalType": "contract IERC223" }],
+    "name": "token",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "tokenReceived",
+    "inputs": [
+      { "type": "address", "name": "_from", "internalType": "address" },
+      { "type": "uint256", "name": "_value", "internalType": "uint256" },
+      { "type": "bytes", "name": "_data", "internalType": "bytes" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "transferOwnership",
+    "inputs": [{ "type": "address", "name": "newOwner", "internalType": "address" }]
+  }
+]

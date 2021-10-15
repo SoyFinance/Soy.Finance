@@ -5,6 +5,7 @@ import { useWeb3React } from '@web3-react/core'
 // import Web3 from 'web3'
 // import { getContract2 } from 'hooks'
 import contracAddresses from 'constants/contracts'
+import { getContract2 } from 'hooks'
 import getRpcUrl from './getRpcUrl'
 import erc20Abi from '../constants/abi/erc20.json'
 import airdropAbi from '../constants/abi/airdrop.json'
@@ -34,8 +35,8 @@ export const getSoyTokenContract = (signer?: ethers.Signer | ethers.providers.Pr
   return getContract(erc20Abi, address, signer)
 }
 
-const BIG_ZERO = new BigNumber(0)
-const BIG_TEN = new BigNumber(10)
+export const BIG_ZERO = new BigNumber(0)
+export const BIG_TEN = new BigNumber(10)
 export const BIG_100 = new BigNumber(100)
 export const ethersToBigNumber = (ethersBn: ethers.BigNumber): BigNumber => new BigNumber(ethersBn.toString())
 
@@ -108,9 +109,30 @@ export const useGetEthBalance = () => {
   return { balance, fetchStatus }
 }
 
-// const getAirdropContractByWeb3 = (library, account) => {
-//   return getContract2(contracAddresses.airdrop, airdropAbi, library, account)
-// }
+export const GetAirdropInfo = async (account, library) => {
+  const airdropContract = await getAirdropContractByWeb3(library || simpleRpcProvider, account)
+
+  const lockperiod = await airdropContract.lockPeriod();
+  const userinfo = await airdropContract.getUserInfo(account);
+  const airdroplen = await airdropContract.getAirdropsLength();
+  const calls = []
+  for(let i = 0 ; i < parseInt(airdroplen) ; i++ ) {
+    calls.push(airdropContract.airdrops(i))
+  }
+  const airdrops = await Promise.all(calls).then(values => {
+    return values;
+  })
+
+  return {
+    lockperiod,
+    userinfo,
+    airdrops,
+  }
+}
+
+const getAirdropContractByWeb3 = (library, account) => {
+  return getContract2(contracAddresses.airdrop, airdropAbi, library, account)
+}
 
 // export const useConfirmBuyToken = () => {
 //   const { account, library } = useWeb3React()
