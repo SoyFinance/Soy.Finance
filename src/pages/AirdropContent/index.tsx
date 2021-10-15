@@ -207,6 +207,10 @@ const AirdropContent = () => {
 
     const handleLogin = () => {
         if( account ) {
+            setBalance(0);
+            setShowDetail(false);
+            setAirdrops(null);
+            setLockPeriod(0);
             logout()
         } else {
             login(ConnectorNames.Injected)
@@ -235,7 +239,10 @@ const AirdropContent = () => {
                             <Text align="left" color={Theme.colors.white} >{t('YOUR BALANCE:')}</Text>
                             <TextBold>{soyBalance.toFixed(2)}</TextBold>
                             <Spacer height="10px" />
-                            <Row onClick={()=>setShowDetail(!showDetail)}>
+                            <Row onClick={()=>{
+                                if (!account) return;
+                                setShowDetail(!showDetail)
+                            }}>
                                 <Text align="left" color={Theme.colors.white} weight="bold">{t('Details:')}:</Text>
                                 {
                                     showDetail?
@@ -244,7 +251,6 @@ const AirdropContent = () => {
                                 }
                             </Row>
                             <Spacer height="2px" />
-                            {/* <Text align="left" color={Theme.colors.white} >{t('Locking day remaining')}:</Text> */}
                         </div>
                         <img src={Assets.soywhite} alt="" />
                     </FlexBetween>
