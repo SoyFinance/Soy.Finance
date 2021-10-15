@@ -273,18 +273,17 @@ const AirdropContent = () => {
                                     // const duration = parseInt(item.duration._hex)
                                     // const daysPassed = parseInt(item.daysPassed._hex)
                                     const datetime = toDateTime(parseInt(userInfo[index].timestamp._hex) + lockPeriod * oneDaySeconds).toString();
-
-                                    // if( duration > daysPassed ) return null;
+                                    const b = parseInt((getBalanceAmount(new BigNumber(userInfo[index].amount._hex)).times(BIG_100).toString())) / 100;
                                     return (
                                         <Row2 key={(item.daysPassed)}>
                                             <TbDiv>
                                                 <Text align="left" color={Theme.colors.white} >{index+1}</Text>
                                             </TbDiv>
                                             <TbDiv>
-                                                <Text align="left" color={Theme.colors.white} >{parseInt((getBalanceAmount(new BigNumber(userInfo[index].amount._hex)).times(BIG_100).toString())) / 100}</Text>
+                                                <Text align="left" color={Theme.colors.white} >{b}</Text>
                                             </TbDiv>
                                             <TbDiv2>
-                                                <Text align="right" color={Theme.colors.white} >{datetime.substring(0, 15)}</Text>
+                                                <Text align="right" color={Theme.colors.white} >{b === 0 ? '---' : datetime.substring(0, 15)}</Text>
                                             </TbDiv2>
                                         </Row2>
                                     )
