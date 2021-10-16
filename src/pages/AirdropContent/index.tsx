@@ -3,6 +3,7 @@ import { useWeb3React } from '@web3-react/core';
 import { getAddress } from "@ethersproject/address";
 import styled from 'styled-components'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
+import axios from 'axios';
 import useAuth from 'hooks/useAuth';
 import { useTranslation } from 'contexts/Localization'
 import { Theme } from 'constants/theme'
@@ -113,13 +114,14 @@ const Text = styled.p<{color: string; align?: string; weight?: string}>`
     @media screen and (max-width: 768px ) {
     }
 `
-const TextB = styled.p<{color: string;}>`
+const TextB = styled.p<{color: string; align?: string}>`
     color: ${({color}) => color};
     font-family: ${Theme.fonts.text};
     font-weight: 700;
     font-size: 18px;
     line-height: 18px;
     letter-space: 0.29px;
+    text-align: ${({align}) => align};
     @media screen and (max-width: 768px ) {
     }
 `
@@ -184,6 +186,8 @@ const AirdropContent = () => {
   const [balance, setBalance] = useState(0);
   const [showDetail, setShowDetail] = useState(false);
 
+  const [userStatus, setUserStatus] = useState('');
+
     useEffect(() => {
         const init = async () => {
             const {
@@ -201,6 +205,25 @@ const AirdropContent = () => {
             init();
         }
     }, [account, library])
+
+    useEffect(() => {
+        const getAccountStatus = () => {
+            axios.get(`https://soy-airdrop.deta.dev/is_eligible/${account}`).then((res) => {
+                if(res.data) {
+                    if( res.data.is_eligable && res.data.is_participant ) {
+                        setUserStatus('You already participate.')
+                    } else if (res.data.is_eligible && !res.data.is_participant) {
+                        setUserStatus('You are eligible.')
+                    } else {
+                        setUserStatus('You are not eligible.')
+                    }
+                }
+            })
+        }
+        if(account) {
+            getAccountStatus();
+        }
+    }, [account])
     
     const reducer = (previousValue, currentValue) => previousValue.amount.add(currentValue.amount);
     const soyBalance = parseInt((balance * 100).toString()) / 100;
@@ -228,6 +251,8 @@ const AirdropContent = () => {
             <ImgUFO src={Assets.ufo} alt="" />
             <StyledModal>
                 <Title color={Theme.colors.white}>{t('Claim Your SOY Tokens')}</Title>
+                {account && <Spacer height="10px" />}
+                {account && <TextB color="#FFF" align="center">{t('User Status:')} {t(`${userStatus}`)}</TextB>}
                 <Line />
                 <GetButton onClick={() => handleLogin()}>
                     <Text align="center" color={Theme.colors.white} >{account? shortenAddress(account) : t('Connect Wallet')}</Text>
@@ -299,7 +324,7 @@ const AirdropContent = () => {
                 </AddButton>
                 <Spacer height="20px" />
                 <Text align="left" color={Theme.colors.white} >{t('The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.')}</Text>
-                <Spacer height="40px" />
+                <Spacer height="20px" />
                 <TextB color="#7EA224">{t('Note:')}</TextB>
                 <Spacer height="10px" />
                 <Text align="left" color={Theme.colors.white} >&quot;{t('Balance is updated every 24 hours.')}&quot;</Text>

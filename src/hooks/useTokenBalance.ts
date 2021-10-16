@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-// import Web3 from 'web3'
+import Web3 from 'web3'
 // import { getContract2 } from 'hooks'
 import contracAddresses from 'constants/contracts'
 import { getContract2 } from 'hooks'
@@ -134,6 +134,9 @@ const getAirdropContractByWeb3 = (library, account) => {
   return getContract2(contracAddresses.airdrop, airdropAbi, library, account)
 }
 
+export const getChecksumedAddress = (account) => {
+  return Web3.utils.toChecksumAddress(account);
+} 
 // export const useConfirmBuyToken = () => {
 //   const { account, library } = useWeb3React()
 //   const AirdropContract = getAirdropContractByWeb3(library || simpleRpcProvider, account)
