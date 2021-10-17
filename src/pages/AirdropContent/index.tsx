@@ -11,7 +11,7 @@ import Spacer from 'components/Spacer'
 import { Assets } from 'constants/images'
 import contracts from 'constants/contracts';
 import { registerToken } from 'hooks/wallet';
-import { BIG_100, getBalanceAmount, GetAirdropInfo } from 'hooks/useTokenBalance';
+import { BIG_100, getBalanceAmount, GetAirdropInfo, getChecksumedAddress } from 'hooks/useTokenBalance';
 import { BigNumber } from 'bignumber.js';
 import { ConnectorNames } from '../../constants'
 
@@ -208,7 +208,8 @@ const AirdropContent = () => {
 
     useEffect(() => {
         const getAccountStatus = () => {
-            axios.get(`https://soy-airdrop.deta.dev/is_eligible/${account}`).then((res) => {
+            const acc = getChecksumedAddress(account);
+            axios.get(`https://soy-airdrop.deta.dev/is_eligible/${acc}`).then((res) => {
                 if(res.data) {
                     if( res.data.is_eligable && res.data.is_participant ) {
                         setUserStatus('You already participate.')
@@ -234,6 +235,7 @@ const AirdropContent = () => {
             setShowDetail(false);
             setAirdrops(null);
             setLockPeriod(0);
+            setUserStatus('');
             logout()
         } else {
             login(ConnectorNames.Injected)
@@ -245,14 +247,15 @@ const AirdropContent = () => {
         date.setSeconds(secs);
         return date;
     }
+    
     return (
         <Container>
             <Img src={Assets.airback} alt="" />
             <ImgUFO src={Assets.ufo} alt="" />
             <StyledModal>
                 <Title color={Theme.colors.white}>{t('Claim Your SOY Tokens')}</Title>
-                {account && <Spacer height="10px" />}
-                {account && <TextB color="#FFF" align="center">{t('User Status:')} {t(`${userStatus}`)}</TextB>}
+                {account && userStatus !== '' && <Spacer height="10px" />}
+                {account && userStatus !== '' && <TextB color="#FFF" align="center">{t('User Status:')} {t(`${userStatus}`)}</TextB>}
                 <Line />
                 <GetButton onClick={() => handleLogin()}>
                     <Text align="center" color={Theme.colors.white} >{account? shortenAddress(account) : t('Connect Wallet')}</Text>
