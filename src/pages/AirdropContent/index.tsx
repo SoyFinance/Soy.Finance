@@ -212,7 +212,7 @@ const AirdropContent = () => {
             axios.get(`https://soy-airdrop.deta.dev/is_eligible/${acc}`).then((res) => {
                 if(res.data) {
                     if( res.data.is_eligable && res.data.is_participant ) {
-                        setUserStatus('You already participate.')
+                        setUserStatus('You are already participate.')
                     } else if (res.data.is_eligible && !res.data.is_participant) {
                         setUserStatus('You are eligible.')
                     } else {
@@ -247,7 +247,7 @@ const AirdropContent = () => {
         date.setSeconds(secs);
         return date;
     }
-    
+
     return (
         <Container>
             <Img src={Assets.airback} alt="" />
@@ -332,7 +332,7 @@ const AirdropContent = () => {
                 <Spacer height="10px" />
                 <Text align="left" color={Theme.colors.white} >&quot;{t('Balance is updated every 24 hours.')}&quot;</Text>
                 <Spacer height="5px" />
-                <Text align="left" color={Theme.colors.white} >&quot;{t('First Airdrop will starts on 15/10/2021.')}&quot;</Text>
+                <Text align="left" color={Theme.colors.white} >&quot;{t('First Airdrop starts on 15/10/2021.')}&quot;</Text>
                 <Spacer height="20px" />
             </StyledModal>
             <Spacer height="100px" />

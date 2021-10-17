@@ -112,7 +112,11 @@
   "Balance is updated every 24 hours.": "Balance is updated every 24 hours.",
   "Note:": "Note:",
   "CLO coins are required to perform transactions on Callisto Network (1 CLO is enough).": "CLO coins are required to perform transactions on Callisto Network (1 CLO is enough).",
-  "First Airdrop will starts on 15/10/2021.": "First Airdrop will starts on 15/10/2021.",
+  "First Airdrop starts on 15/10/2021.": "First Airdrop starts on 15/10/2021.",
   "Locking day remaining": "Locking day remaining",
-  "The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.": "The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details."
+  "The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.": "The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.",
+  "You are already participate.": "You are already participate.",
+  "You are eligible.": "You are eligible.",
+  "You are not eligible.": "You are not eligible.",
+  "User Status": "User Status"
 }
