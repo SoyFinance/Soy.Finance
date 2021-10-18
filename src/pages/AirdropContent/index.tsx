@@ -15,12 +15,21 @@ import { BIG_100, getBalanceAmount, GetAirdropInfo, getChecksumedAddress } from 
 import { BigNumber } from 'bignumber.js';
 import { ConnectorNames } from '../../constants'
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 150px;
+    background-color: white;
+`
+
 const Container = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
-    margin: 80px 0px 0px;
+    margin: 0px 0px 0px;
     background-color: white;
     min-height: 650px;
 `
@@ -158,6 +167,12 @@ const Column= styled.div`
         padding: 10px;
     }
 `
+const SpaceH = styled.div`
+    width: 50px;
+    @media screen and (max-width: 768px) {
+        width: 20px;
+    }
+`
 function isAddress(value) {
     try {
         return getAddress(value);
@@ -178,6 +193,7 @@ const oneDaySeconds = 24 * 3600
 const AirdropContent = () => {
     const { t } = useTranslation()
     const { account, library } = useWeb3React()
+    // const account = "0x2a7Ae21193EE0184DdDC0d89771Ee50B98019a41"
     const { login, logout } = useAuth()
 
   const [lockPeriod, setLockPeriod] = useState(0);
@@ -187,6 +203,7 @@ const AirdropContent = () => {
   const [showDetail, setShowDetail] = useState(false);
 
   const [userStatus, setUserStatus] = useState('');
+  const [metrics, setMetrics] = useState(null);
 
     useEffect(() => {
         const init = async () => {
@@ -198,6 +215,7 @@ const AirdropContent = () => {
             setLockPeriod(parseInt(lockperiod))
             setUserInfo(userinfo)
             setAirdrops(airdrops)
+            // console.log(userinfo, "<=====++++++")
             const bigBalance = userinfo.reduce(reducer);
             setBalance(parseFloat(getBalanceAmount(new BigNumber(bigBalance.amount._hex)).toString()));
         }
@@ -229,6 +247,17 @@ const AirdropContent = () => {
     const reducer = (previousValue, currentValue) => previousValue.amount.add(currentValue.amount);
     const soyBalance = parseInt((balance * 100).toString()) / 100;
 
+    useEffect(() => {
+        const getMetrics = () => {
+            axios.get('https://soy-airdrop.deta.dev/get_metrics').then((res) => {
+                if(res.data) {
+                    setMetrics(res.data);
+                }
+            })
+        }
+        getMetrics();
+    }, [])
+
     const handleLogin = () => {
         if( account ) {
             setBalance(0);
@@ -249,94 +278,104 @@ const AirdropContent = () => {
     }
 
     return (
-        <Container>
-            <Img src={Assets.airback} alt="" />
-            <ImgUFO src={Assets.ufo} alt="" />
-            <StyledModal>
-                <Title color={Theme.colors.white}>{t('Claim Your SOY Tokens')}</Title>
-                {account && userStatus !== '' && <Spacer height="10px" />}
-                {account && userStatus !== '' && <TextB color="#FFF" align="center">{t('User Status:')} {t(`${userStatus}`)}</TextB>}
-                <Line />
-                <GetButton onClick={() => handleLogin()}>
-                    <Text align="center" color={Theme.colors.white} >{account? shortenAddress(account) : t('Connect Wallet')}</Text>
-                </GetButton>
-                <Spacer height="20px" />
-                <Column>
-                    <FlexBetween>
-                        <div>
-                            <Text align="left" color={Theme.colors.white} >{t('YOUR BALANCE:')}</Text>
-                            <TextBold>{soyBalance.toFixed(2)}</TextBold>
-                            <Spacer height="10px" />
-                            <Row onClick={()=>{
-                                if (!account) return;
-                                setShowDetail(!showDetail)
-                            }}>
-                                <Text align="left" color={Theme.colors.white} weight="bold">{t('Details:')}:</Text>
+        <Wrapper>
+            <Title color={Theme.colors.black}>{t('Metrics Data')}</Title>
+            <div className="row center" style={{marginTop: 10, paddingBottom: 3}}>
+                <TextB align="center" color={Theme.colors.black} >Elligible: {metrics.result.elligible}</TextB>
+                <SpaceH />
+                <TextB align="center" color={Theme.colors.black} >Participants: {metrics.result.participants}</TextB>
+            </div>
+            <Container>
+                <Img src={Assets.airback} alt="" />
+                <ImgUFO src={Assets.ufo} alt="" />
+                <StyledModal>
+                    <Title color={Theme.colors.white}>{t('Claim Your SOY Tokens')}</Title>
+                    {account && userStatus !== '' && <Spacer height="10px" />}
+                    {account && userStatus !== '' && <TextB color="#FFF" align="center">{t('User Status:')} {t(`${userStatus}`)}</TextB>}
+                    {account && userStatus === 'You are eligible.' && <Spacer height="10px" />}
+                    {account && userStatus === 'You are eligible.' && <Text color="#FFF" align="center">{t(`Your ballance will be visible tomorow.`)}</Text>}
+                    <Line />
+                    <GetButton onClick={() => handleLogin()}>
+                        <Text align="center" color={Theme.colors.white} >{account? shortenAddress(account) : t('Connect Wallet')}</Text>
+                    </GetButton>
+                    <Spacer height="20px" />
+                    <Column>
+                        <FlexBetween>
+                            <div>
+                                <Text align="left" color={Theme.colors.white} >{t('YOUR BALANCE:')}</Text>
+                                <TextBold>{soyBalance.toFixed(2)}</TextBold>
+                                <Spacer height="10px" />
+                                <Row onClick={()=>{
+                                    if (!account) return;
+                                    setShowDetail(!showDetail)
+                                }}>
+                                    <Text align="left" color={Theme.colors.white} weight="bold">{t('Details:')}:</Text>
+                                    {
+                                        showDetail?
+                                        <FiChevronUp color={Theme.colors.white} size={24} />:
+                                        <FiChevronDown color={Theme.colors.white} size={24} />
+                                    }
+                                </Row>
+                                <Spacer height="2px" />
+                            </div>
+                            <img src={Assets.soywhite} alt="" />
+                        </FlexBetween>
+                        {
+                            showDetail && account &&
+                            <DetailContent>
+                                <Row2>
+                                    <TbDiv>
+                                        <Text align="left" color={Theme.colors.white} >{t('PhaseId')}</Text>
+                                    </TbDiv>
+                                    <TbDiv>
+                                        <Text align="left" color={Theme.colors.white} >{t('Balance')}</Text>
+                                    </TbDiv>
+                                    <TbDiv2>
+                                        <Text align="right" color={Theme.colors.white} >{t('Claim Date')}</Text>
+                                    </TbDiv2>
+                                </Row2>
                                 {
-                                    showDetail?
-                                    <FiChevronUp color={Theme.colors.white} size={24} />:
-                                    <FiChevronDown color={Theme.colors.white} size={24} />
+                                    Airdrops?.map((item, index) => {
+                                        // const duration = parseInt(item.duration._hex)
+                                        // const daysPassed = parseInt(item.daysPassed._hex)
+                                        const datetime = toDateTime(parseInt(userInfo[index].timestamp._hex) + lockPeriod * oneDaySeconds).toString();
+                                        const b = parseInt((getBalanceAmount(new BigNumber(userInfo[index].amount._hex)).times(BIG_100).toString())) / 100;
+                                        return (
+                                            <Row2 key={(item.daysPassed)}>
+                                                <TbDiv>
+                                                    <Text align="left" color={Theme.colors.white} >{index+1}</Text>
+                                                </TbDiv>
+                                                <TbDiv>
+                                                    <Text align="left" color={Theme.colors.white} >{b}</Text>
+                                                </TbDiv>
+                                                <TbDiv2>
+                                                    <Text align="right" color={Theme.colors.white} >{b === 0 ? '---' : datetime.substring(0, 15)}</Text>
+                                                </TbDiv2>
+                                            </Row2>
+                                        )
+                                    })
                                 }
-                            </Row>
-                            <Spacer height="2px" />
-                        </div>
-                        <img src={Assets.soywhite} alt="" />
-                    </FlexBetween>
-                    {
-                        showDetail && account &&
-                        <DetailContent>
-                            <Row2>
-                                <TbDiv>
-                                    <Text align="left" color={Theme.colors.white} >{t('PhaseId')}</Text>
-                                </TbDiv>
-                                <TbDiv>
-                                    <Text align="left" color={Theme.colors.white} >{t('Balance')}</Text>
-                                </TbDiv>
-                                <TbDiv2>
-                                    <Text align="right" color={Theme.colors.white} >{t('Claim Date')}</Text>
-                                </TbDiv2>
-                            </Row2>
-                            {
-                                Airdrops?.map((item, index) => {
-                                    // const duration = parseInt(item.duration._hex)
-                                    // const daysPassed = parseInt(item.daysPassed._hex)
-                                    const datetime = toDateTime(parseInt(userInfo[index].timestamp._hex) + lockPeriod * oneDaySeconds).toString();
-                                    const b = parseInt((getBalanceAmount(new BigNumber(userInfo[index].amount._hex)).times(BIG_100).toString())) / 100;
-                                    return (
-                                        <Row2 key={(item.daysPassed)}>
-                                            <TbDiv>
-                                                <Text align="left" color={Theme.colors.white} >{index+1}</Text>
-                                            </TbDiv>
-                                            <TbDiv>
-                                                <Text align="left" color={Theme.colors.white} >{b}</Text>
-                                            </TbDiv>
-                                            <TbDiv2>
-                                                <Text align="right" color={Theme.colors.white} >{b === 0 ? '---' : datetime.substring(0, 15)}</Text>
-                                            </TbDiv2>
-                                        </Row2>
-                                    )
-                                })
-                            }
-                        </DetailContent>
-                    }
-                </Column>
-                <Spacer height="20px" />
-                <AddButton onClick={() => registerToken(contracts.soyToken, "SOY", 18)}>
-                    <img src={Assets.token} alt="" style={{height: 30, marginRight: 10}}/>
-                    <Text align="center" color={Theme.colors.white} >{t('Add to Metamask')}</Text>
-                </AddButton>
-                <Spacer height="20px" />
-                <Text align="left" color={Theme.colors.white} >{t('The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.')}</Text>
-                <Spacer height="20px" />
-                <TextB color="#7EA224">{t('Note:')}</TextB>
-                <Spacer height="10px" />
-                <Text align="left" color={Theme.colors.white} >&quot;{t('Balance is updated every 24 hours.')}&quot;</Text>
-                <Spacer height="5px" />
-                <Text align="left" color={Theme.colors.white} >&quot;{t('First Airdrop starts on 15/10/2021.')}&quot;</Text>
-                <Spacer height="20px" />
-            </StyledModal>
-            <Spacer height="100px" />
-        </Container>
+                            </DetailContent>
+                        }
+                    </Column>
+                    <Spacer height="20px" />
+                    <AddButton onClick={() => registerToken(contracts.soyToken, "SOY", 18)}>
+                        <img src={Assets.token} alt="" style={{height: 30, marginRight: 10}}/>
+                        <Text align="center" color={Theme.colors.white} >{t('Add to Metamask')}</Text>
+                    </AddButton>
+                    <Spacer height="20px" />
+                    <Text align="left" color={Theme.colors.white} >{t('The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.')}</Text>
+                    <Spacer height="20px" />
+                    <TextB color="#7EA224">{t('Note:')}</TextB>
+                    <Spacer height="10px" />
+                    <Text align="left" color={Theme.colors.white} >&quot;{t('Balance is updated every 24 hours.')}&quot;</Text>
+                    <Spacer height="5px" />
+                    <Text align="left" color={Theme.colors.white} >&quot;{t('First Airdrop starts on 15/10/2021.')}&quot;</Text>
+                    <Spacer height="20px" />
+                </StyledModal>
+                <Spacer height="100px" />
+            </Container>
+        </Wrapper>
     )
 }
  
