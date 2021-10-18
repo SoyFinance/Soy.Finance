@@ -281,7 +281,7 @@ const AirdropContent = () => {
         <Wrapper>
             {metrics && <Title color={Theme.colors.black}>{t('Metrics Data')}</Title>}
             {metrics && <div className="row center" style={{marginTop: 10, paddingBottom: 3}}>
-                <TextB align="center" color={Theme.colors.black} >Elligible: {metrics.result.elligible}</TextB>
+                <TextB align="center" color={Theme.colors.black} >Claimed today: {metrics.result.elligible}</TextB>
                 <SpaceH />
                 <TextB align="center" color={Theme.colors.black} >Participants: {metrics.result.participants}</TextB>
             </div>}
