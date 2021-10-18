@@ -112,11 +112,12 @@
   "Balance is updated every 24 hours.": "餘額每 24 小時更新一次。",
   "Note:": "注:",
   "CLO coins are required to perform transactions on Callisto Network (1 CLO is enough).": "在 Callisto Network 上執行交易需要 CLO 幣（1 個 CLO 就足夠了）。",
-  "First Airdrop starts on 15/10/2021.": "第一次空投將於 2021 年 15 月 10 日開始。",
+  "First Airdrop starts on 15/10/2021.": "第一次空投將於 2021 年 10 月 15 日開始。",
   "Locking day remaining": "鎖定剩余天數",
   "The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.": "當您連接錢包時，系統會檢查您的資格。 詳情請參閱空投規則。",
   "You are already participate.": "You are already participate.",
   "You are eligible.": "You are eligible.",
   "You are not eligible.": "You are not eligible.",
-  "User Status": "User Status"
+  "User Status": "User Status",
+  "Your ballance will be visible tomorow.": "Your ballance will be visible tomorow."
 }
