@@ -115,9 +115,11 @@
   "First Airdrop starts on 15/10/2021.": "第一次空投将于 2021 年 10 月 15 日开始。",
   "Locking day remaining": "锁定剩余天数",
   "The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.": "当您连接钱包时，系统会检查您的资格。 详情请参阅空投规则。",
-  "You are already participate.": "You are already participate.",
-  "You are eligible.": "You are eligible.",
-  "You are not eligible.": "You are not eligible.",
-  "User Status": "User Status",
-  "Your ballance will be visible tomorow.": "Your ballance will be visible tomorow."
+  "You are already participate.": "您已经参与了。",
+  "You are elligible.": "您符合条件。",
+  "You are not elligible.": "您不符合条件。",
+  "User Status": "用户状态",
+  "Your ballance will be visible tomorow.": "明天可以看到您的余额。",
+  "Claimed today": "今天认领",
+  "Participants": "参与者"
 }

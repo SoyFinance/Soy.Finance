@@ -116,8 +116,10 @@
   "Locking day remaining": "Locking day remaining",
   "The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.": "The system checks your eligibility when you connect your wallet. Please refer to the Airdrop rules for details.",
   "You are already participate.": "You are already participate.",
-  "You are eligible.": "You are eligible.",
-  "You are not eligible.": "You are not eligible.",
+  "You are elligible.": "You are elligible.",
+  "You are not elligible.": "You are not elligible.",
   "User Status": "User Status",
-  "Your ballance will be visible tomorow.": "Your ballance will be visible tomorow."
+  "Your ballance will be visible tomorow.": "Your ballance will be visible tomorow.",
+  "Claimed today": "",
+  "Participants": ""
 }

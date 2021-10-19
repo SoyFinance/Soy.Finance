@@ -232,9 +232,9 @@ const AirdropContent = () => {
                     if( res.data.is_eligable && res.data.is_participant ) {
                         setUserStatus('You are already participate.')
                     } else if (res.data.is_eligible && !res.data.is_participant) {
-                        setUserStatus('You are eligible.')
+                        setUserStatus('You are elligible.')
                     } else {
-                        setUserStatus('You are not eligible.')
+                        setUserStatus('You are not elligible.')
                     }
                 }
             })
@@ -281,9 +281,9 @@ const AirdropContent = () => {
         <Wrapper>
             {metrics && <Title color={Theme.colors.black}>{t('Metrics Data')}</Title>}
             {metrics && <div className="row center" style={{marginTop: 10, paddingBottom: 3}}>
-                <TextB align="center" color={Theme.colors.black} >Claimed today: {metrics.result.elligible}</TextB>
+                <TextB align="center" color={Theme.colors.black} >{t('Claimed today')}: {metrics.result.elligible}</TextB>
                 <SpaceH />
-                <TextB align="center" color={Theme.colors.black} >Participants: {metrics.result.participants}</TextB>
+                <TextB align="center" color={Theme.colors.black} >{t('Participants')}: {metrics.result.participants}</TextB>
             </div>}
             <Container>
                 <Img src={Assets.airback} alt="" />
@@ -291,7 +291,7 @@ const AirdropContent = () => {
                 <StyledModal>
                     <Title color={Theme.colors.white}>{t('Claim Your SOY Tokens')}</Title>
                     {account && userStatus !== '' && <Spacer height="10px" />}
-                    {account && userStatus !== '' && <TextB color="#FFF" align="center">{t('User Status:')} {t(`${userStatus}`)}</TextB>}
+                    {account && userStatus !== '' && <TextB color="#FFF" align="center">{t('User Status')}: {t(`${userStatus}`)}</TextB>}
                     {account && userStatus === 'You are eligible.' && <Spacer height="10px" />}
                     {account && userStatus === 'You are eligible.' && <Text color="#FFF" align="center">{t(`Your ballance will be visible tomorow.`)}</Text>}
                     <Line />
