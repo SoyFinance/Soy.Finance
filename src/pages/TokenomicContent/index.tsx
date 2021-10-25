@@ -60,7 +60,7 @@ const TokenomicContent = () => {
                 </Row2>
                 <Spacer height="10px" />
                 <Row2>
-                    <Text color={Theme.colors.primary}><b>{t('Phase 2')}</b><Text2 color='#767676'>&nbsp;{t('- Sowing Soy (2) - Details to be published on 25/10/21.')}</Text2></Text>
+                    <Text color={Theme.colors.primary}><b>{t('Phase 2')}</b><Text2 color='#767676'>&nbsp;{t('- Sowing Soy - Sushiswap Active Users Airdrop - 500 000 $SOY tokens - 01/11/21 to 15/11/21.')}</Text2></Text>
                 </Row2>
                 <Spacer height="10px" />
                 <Row2>
