@@ -230,11 +230,11 @@ const AirdropContent = () => {
             axios.get(`https://soy-airdrop.deta.dev/is_eligible/${acc}`).then((res) => {
                 if(res.data) {
                     if( res.data.is_eligable && res.data.is_participant ) {
-                        setUserStatus('You are already participate.')
+                        setUserStatus('You already claimed, airdrop amount will be automatically sent to your wallet in 180 days.')
                     } else if (res.data.is_eligible && !res.data.is_participant) {
-                        setUserStatus('You are elligible.')
+                        setUserStatus('You are eligible, come back in 24 hours to check airdrop amount.')
                     } else {
-                        setUserStatus('You are not elligible.')
+                        setUserStatus('You are not eligible.')
                     }
                 }
             })
