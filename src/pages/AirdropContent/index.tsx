@@ -128,7 +128,7 @@ const TextB = styled.p<{color: string; align?: string}>`
     font-family: ${Theme.fonts.text};
     font-weight: 700;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 25px;
     letter-space: 0.29px;
     text-align: ${({align}) => align};
     @media screen and (max-width: 768px ) {
@@ -215,9 +215,12 @@ const AirdropContent = () => {
             setLockPeriod(parseInt(lockperiod))
             setUserInfo(userinfo)
             setAirdrops(airdrops)
-            // console.log(userinfo, "<=====++++++")
             const bigBalance = userinfo.reduce(reducer);
-            setBalance(parseFloat(getBalanceAmount(new BigNumber(bigBalance.amount._hex)).toString()));
+            if (bigBalance.amount === undefined) {
+                setBalance(0)
+            } else {
+                setBalance(parseFloat(getBalanceAmount(new BigNumber(bigBalance.amount._hex)).toString()));
+            }
         }
         if (account){
             init();
@@ -244,7 +247,7 @@ const AirdropContent = () => {
         }
     }, [account])
     
-    const reducer = (previousValue, currentValue) => previousValue.amount.add(currentValue.amount);
+    const reducer = (previousValue, currentValue) => (new BigNumber(previousValue.amount)).plus(new BigNumber(currentValue.amount));
     const soyBalance = parseInt((balance * 100).toString()) / 100;
 
     useEffect(() => {
@@ -283,7 +286,9 @@ const AirdropContent = () => {
             {metrics && <div className="row center" style={{marginTop: 10, paddingBottom: 3}}>
                 <TextB align="center" color={Theme.colors.black} >{t('Claimed today')}: {metrics.result.elligible}</TextB>
                 <SpaceH />
-                <TextB align="center" color={Theme.colors.black} >{t('Participants')}: {metrics.result.participants}</TextB>
+                <TextB align="center" color={Theme.colors.black} >{t('Participants')}: {metrics.result.current_participants}</TextB>
+                <SpaceH />
+                <TextB align="center" color={Theme.colors.black} >{t('Total Participants')}: {metrics.result.participants}</TextB>
             </div>}
             <Container>
                 <Img src={Assets.airback} alt="" />
