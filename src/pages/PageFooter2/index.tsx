@@ -129,15 +129,15 @@ const PageFooter = () => {
                         <StyledLi href="https://callistoenterprise.com/" target="_blank">{t('Callisto Enterprise')}</StyledLi>
                     </div>
                     <div>
-                        <Text><b>{t('Documentation')}</b></Text>
+                    <Text><b>{t('Documentation')}</b></Text>
                         <Spacer height="10px" />
-                        <StyledLi href="https://callisto.network/soy-finance-soy-security-audit/" target="_blank">{t('Platform Audit Report')}</StyledLi>
+                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/safety-on-yields/soy-finance-security-audit" target="_blank">{t('Platform Audit Report')}</StyledLi>
                         <Spacer height="10px" />
                         <StyledLi href="https://" target="_blank">{t('Bug Bounty Report (To come)')}</StyledLi>
                         <Spacer height="10px" />
-                        <StyledLi href="https://soy-finance.medium.com/soy-finance-monetary-policy-vision-4f07a1b48372" target="_blank">{t('Monetary Policy')}</StyledLi>
+                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/articles/monetary-policy-vision" target="_blank">{t('Monetary Policy')}</StyledLi>
                         <Spacer height="10px" />
-                        <StyledLi href="https://callisto.network/erc223-token-standard/" target="_blank">{t('ERC 223 Token Standard')}</StyledLi>
+                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/safety-on-yields/erc-223-token-standard" target="_blank">{t('ERC 223 Token Standard')}</StyledLi>
                     </div>
                     <div>
                         <Text align="center"><b>{t('Social Media')}</b></Text>
@@ -147,7 +147,9 @@ const PageFooter = () => {
                             <StyledLi2 href="https://twitter.com/Soy_Finance" target="_blank"><Twitter /></StyledLi2>
                             <StyledLi2 href="https://www.reddit.com/r/Soy_Finance/" target="_blank"><Redit /></StyledLi2>
                             <StyledLi2 href="https://www.facebook.com/Soy.Finance" target="_blank"><Facebook /></StyledLi2>
-                            <StyledLi2 href="https://soy-finance.medium.com/" target="_blank"><Medium/></StyledLi2>
+                            <StyledLi2 href="https://soy-finance.medium.com/" target="_blank">
+                                <img src={Assets.medium} width="40px" height="40px" alt=""/>
+                            </StyledLi2>
                         </Row>                    
                     </div>
                 </Flex>

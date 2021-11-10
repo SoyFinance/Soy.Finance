@@ -44,6 +44,8 @@ import soywhite from 'assets/images/whitesoy.png'
 import airback from 'assets/images/BG.png'
 import ufo from 'assets/images/UFO.png'
 
+import medium from 'assets/images/gitbook_logo_icon_White.svg'
+
 export const Assets = {
     logo,
     token,
@@ -89,5 +91,6 @@ export const Assets = {
     roadmap,
     soywhite,
     airback,
-    ufo
+    ufo,
+    medium
 }
