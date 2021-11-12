@@ -345,6 +345,7 @@ const AirdropContent = () => {
                                         // const daysPassed = parseInt(item.daysPassed._hex)
                                         const datetime = toDateTime(parseInt(userInfo[index].timestamp._hex) + lockPeriod * oneDaySeconds).toString();
                                         const b = parseInt((getBalanceAmount(new BigNumber(userInfo[index].amount._hex)).times(BIG_100).toString())) / 100;
+                                        if (b === 0) return null
                                         return (
                                             <Row2 key={(item.daysPassed)}>
                                                 <TbDiv>
