@@ -376,7 +376,7 @@ const AirdropContent = () => {
                     <Spacer height="10px" />
                     <Text align="left" color={Theme.colors.white} >&quot;{t('Balance is updated every 24 hours.')}&quot;</Text>
                     <Spacer height="5px" />
-                    <Text align="left" color={Theme.colors.white} >&quot;{t('First Airdrop starts on 15/10/2021.')}&quot;</Text>
+                    <Text align="left" color={Theme.colors.white} >&quot;{t('First Airdrop started on 15/10/2021.')}&quot;</Text>
                     <Spacer height="20px" />
                 </StyledModal>
                 <Spacer height="100px" />
