@@ -148,7 +148,7 @@ const PageFooter = () => {
                             <StyledLi2 href="https://www.reddit.com/r/Soy_Finance/" target="_blank"><Redit /></StyledLi2>
                             <StyledLi2 href="https://www.facebook.com/Soy.Finance" target="_blank"><Facebook /></StyledLi2>
                             {/* <StyledLi2 href="https://soy-finance.medium.com/" target="_blank"><Medium/></StyledLi2> */}
-                            <StyledLi2 href="https://soy-finance.medium.com/" target="_blank">
+                            <StyledLi2 href="https://soy-finance.gitbook.io/soy-finance/articles/seeding-soy-finance" target="_blank">
                                 <img src={Assets.medium} width="40px" height="40px" alt=""/>
                             </StyledLi2>
                         </Row>                    
