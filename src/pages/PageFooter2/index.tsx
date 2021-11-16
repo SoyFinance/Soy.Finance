@@ -7,7 +7,6 @@ import Telegram from 'components/Svg/Icons/Telegram';
 import Twitter from 'components/Svg/Icons/Twitter';
 import Redit from 'components/Svg/Icons/Redit';
 import Facebook from 'components/Svg/Icons/Facebook';
-import Medium from 'components/Svg/Icons/Medium';
 import { useTranslation } from 'contexts/Localization';
 
 const StyledLi = styled.a`
