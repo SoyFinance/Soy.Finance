@@ -38,7 +38,7 @@ const Metrics = () => {
 
     const { t, currentLanguage } = useTranslation()
     const isEn = currentLanguage.code === "en";
-    
+
     return (
         <Container id="about">
             <Content>
@@ -79,7 +79,7 @@ const Metrics = () => {
                 <Flex data-aos="fade-left">
                     <SubFlex>
                         <Div className="margin">
-                            <StyledText2>{t('Total Value Locked')}</StyledText2>
+                            <StyledText2>{t('Total Volume')}</StyledText2>
                             <Spacer height="20px" />
                             <StyledText>${shortenNumber(metricsData.result.Volume)}+</StyledText>
                         </Div>
