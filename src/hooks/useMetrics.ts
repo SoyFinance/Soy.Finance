@@ -8,9 +8,13 @@ export const useMetrics = () => {
         "runtime": 0.031,
         "block_number": 8392129,
         "result": {
-            "Users": 971,
-            "Trades": 19477,
-            "Volume": 94475694.40012097
+            "Users": 0,
+            "Trades": 0,
+            "Volume": 0,
+            "Volume_24h": 0,
+            "Soy_Circulating_Supply": 0,
+            "Soy_IDO": 0,
+            "Total_Value_Locked_In_Farms": 0
         }
     })
 

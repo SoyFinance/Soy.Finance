@@ -123,5 +123,15 @@
   "Claimed today": "Claimed today",
   "New Participants": "New Participants",
   "Total Participants": "Total Participants",
-  "Metrics Data": "Metrics Data"
+  "Metrics Data": "Metrics Data",
+  "Total Transaction Volume": "Total Transaction Volume",
+  "(USD in 24 hours)": "(USD in 24 hours)",
+  "Number of Users": "Number of Users",
+  "Total Value Locked": "Total Value Locked",
+  "SOY Token": "SOY Token",
+  "Circulating Supply": "Circulating Supply",
+  "Insurance Funds": "Insurance Funds",
+  "(USD raised via SOY IDO)": "(USD raised via SOY IDO)",
+  "Total Value": "Total Value",
+  "(USD Locked In Farms)": "(USD Locked In Farms)"
 }

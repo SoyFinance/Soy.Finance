@@ -38,41 +38,69 @@ const Metrics = () => {
 
     const { t, currentLanguage } = useTranslation()
     const isEn = currentLanguage.code === "en";
-
+    
     return (
         <Container id="about">
             <Content>
                 <Flex data-aos="fade-right">
-                    <Div className="margin">
-                        <StyledText2>{t('Total Volume')}</StyledText2>
-                        <Spacer height="20px" />
-                        <StyledText>${shortenNumber(metricsData.result.Volume)}</StyledText>
-                    </Div>
-                    <Div>
-                        <StyledText2>{t('Total Users')}</StyledText2>
-                        <Spacer height="20px" />
-                        <StyledText>{shortenNumber(metricsData.result.Users)}+</StyledText>
-                    </Div>
+                    <SubFlex>
+                        <Div className="margin">
+                            <StyledText2>{t('Total Transaction Volume')}</StyledText2>
+                            <StyledText3>{t('(USD in 24 hours)')}</StyledText3>
+                            <StyledText>${shortenNumber(metricsData.result.Volume_24h)}+</StyledText>
+                        </Div>
+                        <Div  className="margin">
+                            <StyledText2>{t('Total Trades')}</StyledText2>
+                            <Spacer height="20px" />
+                            <StyledText>{shortenNumber(metricsData.result.Trades)}+</StyledText>
+                        </Div>
+                    </SubFlex>
+                    <SubFlex>
+                        <Div  className="margin">
+                            <StyledText2>{t('Number of Users')}</StyledText2>
+                            <Spacer height="20px" />
+                            <StyledText>{shortenNumber(metricsData.result.Users)}+</StyledText>
+                        </Div>
+                        <Div className="margin">
+                            {
+                                isEn ?
+                                <StyledText2>{t('Supported Networks*')}</StyledText2>:
+                                <StyledText3>{t('Supported Networks*')}</StyledText3>
+                            }
+                            {
+                                isEn ?
+                                <StyledText3>{t('*Via Callisto Bridge')}</StyledText3>:
+                                <StyledText2>{t('*Via Callisto Bridge')}</StyledText2>
+                            }
+                            <StyledText>4</StyledText>
+                        </Div>
+                    </SubFlex>
                 </Flex>
                 <Flex data-aos="fade-left">
-                    <Div className="margin">
-                        {
-                            isEn ?
-                            <StyledText2>{t('Supported Networks*')}</StyledText2>:
-                            <StyledText3>{t('Supported Networks*')}</StyledText3>
-                        }
-                        {
-                            isEn ?
-                            <StyledText3>{t('*Via Callisto Bridge')}</StyledText3>:
-                            <StyledText2>{t('*Via Callisto Bridge')}</StyledText2>
-                        }
-                        <StyledText>4</StyledText>
-                    </Div>
-                    <Div>
-                        <StyledText2>{t('Total Trades')}</StyledText2>
-                        <Spacer height="20px" />
-                        <StyledText>{shortenNumber(metricsData.result.Trades)}+</StyledText>
-                    </Div>
+                    <SubFlex>
+                        <Div className="margin">
+                            <StyledText2>{t('Total Value Locked')}</StyledText2>
+                            <Spacer height="20px" />
+                            <StyledText>${shortenNumber(metricsData.result.Volume)}+</StyledText>
+                        </Div>
+                        <Div className="margin">
+                            <StyledText2>{t('SOY Token')}</StyledText2>
+                            <StyledText3>{t('Circulating Supply')}</StyledText3>
+                            <StyledText>${shortenNumber(metricsData.result.Soy_Circulating_Supply)}+</StyledText>
+                        </Div>
+                    </SubFlex>
+                    <SubFlex>
+                        <Div className="margin">
+                            <StyledText2>{t('Insurance Funds')}</StyledText2>
+                            <StyledText3>{t('(USD raised via SOY IDO)')}</StyledText3>
+                            <StyledText>${shortenNumber(metricsData.result.Soy_IDO)}+</StyledText>
+                        </Div>
+                        <Div className="margin">
+                            <StyledText2>{t('Total Value')}</StyledText2>
+                            <StyledText3>{t('(USD Locked In Farms)')}</StyledText3>
+                            <StyledText>${shortenNumber(metricsData.result.Total_Value_Locked_In_Farms)}+</StyledText>
+                        </Div>
+                    </SubFlex>
                 </Flex>
             </Content>
             <BackImg src={Assets.metricbg} alt="" />
@@ -140,18 +168,10 @@ const Flex = styled.div`
     padding: 10px;
     justify-content: center;
     .margin {
-        margin: 0 80px;
+        margin: 0 10px;
     }
-    @media screen and (max-width: 1200px) {
-        .margin {
-            margin: 0 40px;
-        }
-    }
-    
-    @media screen and (max-width: 980px) {
-        .margin {
-            margin: 0 20px;
-        }
+    @media screen and (max-width: 1460px) {
+        flex-direction: column;
     }
     @media screen and (max-width: 768px) {
         width: calc(100%);
@@ -162,36 +182,52 @@ const Flex = styled.div`
     }
     
 `;
+const SubFlex = styled.div`
+    display: flex !important;
+    justify-content: center;
+    
+    @media screen and (max-width: 1460px) {
+        margin-bottom: 20px;
+    }
+    @media screen and (max-width: 768px) {
+        
+    }
+    
+`;
 const StyledText = styled.p`
     color: ${Theme.colors.white};
-    font-size: 65px;
+    font-size: 25px;
     font-family: ${Theme.fonts.text};
-    line-height: 78px;
+    line-height: 38px;
     white-space: nowrap;
     letter-spacing: 5%;
     text-align: center;
     @media screen and (max-width: 1200px) {
     }
     @media screen and (max-width: 768px) {
-        font-size: 44.2px;
-        line-height: 53.04px;
+        /* font-size: 44.2px;
+        line-height: 53.04px; */
     }
 `;
 const StyledText2 = styled.p`
     color: ${Theme.colors.third};
-    font-size: 21px;
+    font-size: 18px;
     font-family: ${Theme.fonts.text};
     line-height: 25.2px;
     white-space: nowrap;
     letter-spacing: 5%;
     text-align: center;
     @media screen and (max-width: 980px) {
+        /* font-size: 16px;
+        line-height: 18px; */
+    }
+    @media screen and (max-width: 768px) {
+        color: #b3d400;
         font-size: 16px;
         line-height: 18px;
     }
-    @media screen and (max-width: 768px) {
-        font-size: 12px;
-        line-height: 18px;
+    @media screen and (max-width: 330px) {
+        font-size: 14px;
     }
 `;
 const StyledText3 = styled.p`

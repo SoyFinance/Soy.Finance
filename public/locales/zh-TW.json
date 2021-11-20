@@ -123,5 +123,15 @@
   "Claimed today": "今天認領",
   "New Participants": "參與者",
   "Total Participants": "總參與者",
-  "Metrics Data": "指標數據"
+  "Metrics Data": "指標數據",
+  "Total Transaction Volume": "總交易量",
+  "(USD in 24 hours)": "(USD in 24 hours)",
+  "Number of Users": "用戶數",
+  "Total Value Locked": "總價值鎖定",
+  "SOY Token": "SOY 代幣",
+  "Circulating Supply": "循環供應",
+  "Insurance Funds": "保險基金",
+  "(USD raised via SOY IDO)": "(USD 通過 SOY IDO 籌集)",
+  "Total Value": "總價值",
+  "(USD Locked In Farms)": "(USD 美元鎖定農場)"
 }

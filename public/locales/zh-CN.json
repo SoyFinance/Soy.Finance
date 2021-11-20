@@ -123,5 +123,15 @@
   "Claimed today": "今天认领",
   "New Participants": "参与者",
   "Total Participants": "总参与者",
-  "Metrics Data": "指标数据"
+  "Metrics Data": "指标数据",
+  "Total Transaction Volume": "总交易量",
+  "(USD in 24 hours)": "(USD in 24 hours)",
+  "Number of Users": "用户数",
+  "Total Value Locked": "总价值锁定",
+  "SOY Token": "SOY 代币",
+  "Circulating Supply": "循环供应",
+  "Insurance Funds": "保险基金",
+  "(USD raised via SOY IDO)": "(USD 通过 SOY IDO 筹集)",
+  "Total Value": "总价值",
+  "(USD Locked In Farms)": "(USD 美元锁定农场)"
 }
