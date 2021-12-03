@@ -200,7 +200,7 @@ const AirdropContent = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [Airdrops, setAirdrops] = useState(null);
   const [balance, setBalance] = useState(0);
-  const [showDetail, setShowDetail] = useState(false);
+  const [showDetail, setShowDetail] = useState(true);
 
   const [userStatus, setUserStatus] = useState('');
   const [metrics, setMetrics] = useState(null);
