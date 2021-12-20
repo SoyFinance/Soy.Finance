@@ -72,15 +72,19 @@ const TokenomicContent = () => {
                 </Row2>
                 <Spacer height="10px" />
                 <Row2>
-                    <Text color={Theme.colors.primary}><b>{t('Phase 5')}</b><Text2 color='#767676'>&nbsp;{t('- Storing Soy - Details to be published on 10/12/21.')}</Text2></Text>
+                    <Text color={Theme.colors.primary}><b>{t('Phase 5')}</b><Text2 color='#767676'>&nbsp;{t('- Storing Soy - CryptoBot Active Users Airdrop - 1 000 000 $SOY tokens - 16/12/21 to 15/01/21.')}</Text2></Text>
                 </Row2>
                 <Spacer height="10px" />
                 <Row2>
-                    <Text color={Theme.colors.primary}><b>{t('Phase 6')}</b><Text2 color='#767676'>&nbsp;{t('- Deep Freezing SOY - Details to be published on 25/12/21.')}</Text2></Text>
+                    <Text color={Theme.colors.primary}><b>{t('Phase 6')}</b><Text2 color='#767676'>&nbsp;{t('- Deep Freezing SOY - Details to be published on 10/01/22*.')}</Text2></Text>
                 </Row2>
                 <Spacer height="10px" />
                 <Row2>
-                    <Text color={Theme.colors.primary}><b>{t('Phase 7')}</b><Text2 color='#767676'>&nbsp;{t('- Harvesting Soy - Details to be published on 10/01/22.')}</Text2></Text>
+                    <Text color={Theme.colors.primary}><b>{t('Phase 7')}</b><Text2 color='#767676'>&nbsp;{t('- Harvesting Soy - Details to be published on 10/02/22*.')}</Text2></Text>
+                </Row2>
+                <Spacer height="10px" />
+                <Row2>
+                    <Text2 color='#767676'>{t('*Updated on 20/12/21.')}</Text2>
                 </Row2>
                 <Spacer height="40px" />
                 <SubTitle color={Theme.colors.bgscondary}>{t('Transaction Fees Distribution')}</SubTitle>

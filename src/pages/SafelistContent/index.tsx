@@ -41,7 +41,7 @@ const SafelistContent = () => {
                 <Spacer height="20px" />
                 <Row>
                     <Circle />
-                    <Text color='#767676'>{t('Burn 10 000 SOY tokens by sending them to the')}&nbsp;&nbsp;<a href="https://explorer.callisto.network/address/0x000000000000000000000000000000000000dEaD/transactions" target="_blank" rel="noreferrer" style={{color: 'blue'}}>{t('"Burn address"')}.</a></Text>
+                    <Text color='#767676'>{t('Burn 10 000 SOY tokens by sending them to the')}&nbsp;&nbsp;<a href="https://explorer.callisto.network/address/0xdEad000000000000000000000000000000000000/token-transfers" target="_blank" rel="noreferrer" style={{color: 'blue'}}>{t('"Burn address"')}.</a></Text>
                 </Row>
             </TopDiv>
             <Spacer height="40px" />
