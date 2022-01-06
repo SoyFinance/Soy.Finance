@@ -86,7 +86,7 @@ const Metrics = () => {
                         <Div className="margin">
                             <StyledText2>{t('SOY Token')}</StyledText2>
                             <StyledText3>{t('Circulating Supply')}</StyledText3>
-                            <StyledText>${shortenNumber(metricsData.result.Soy_Circulating_Supply)}+</StyledText>
+                            <StyledText>{shortenNumber(metricsData.result.Soy_Circulating_Supply)}</StyledText>
                         </Div>
                     </SubFlex>
                     <SubFlex>
