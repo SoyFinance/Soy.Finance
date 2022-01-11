@@ -80,8 +80,8 @@ const PageFooter = () => {
                             <StyledLi href="https://callisto.network/erc223-token-standard/" target="_blank">{t('ERC 223 Token Standard')}</StyledLi>
                         </Itemdiv2>
                         <Itemdiv>
-                            <Text align="center"><b>{t('Social Media')}</b></Text>
-                            <Spacer height="10px" />
+                            {/* <Text align="center"><b>{t('Social Media')}</b></Text>
+                            <Spacer height="10px" /> */}
                             <Row>
                                 <StyledLi2 href="https://t.me/Soy_Finance" target="_blank"><Telegram /></StyledLi2>
                                 <StyledLi2 href="https://twitter.com/Soy_Finance" target="_blank"><Twitter /></StyledLi2>
@@ -90,6 +90,7 @@ const PageFooter = () => {
                                 <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
                                     <img src={Assets.medium} width="40px" height="40px" alt=""/>
                                 </StyledLi2>
+                                <StyledLi2 href="https://defipulse.com/" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
                             </Row>                    
                         </Itemdiv>
                     </Row2>
