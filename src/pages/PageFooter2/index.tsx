@@ -7,6 +7,7 @@ import Telegram from 'components/Svg/Icons/Telegram';
 import Twitter from 'components/Svg/Icons/Twitter';
 import Redit from 'components/Svg/Icons/Redit';
 import Facebook from 'components/Svg/Icons/Facebook';
+import Pulse from 'components/Svg/Icons/Pulse';
 import { useTranslation } from 'contexts/Localization';
 
 const StyledLi = styled.a`
@@ -151,6 +152,7 @@ const PageFooter = () => {
                             <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
                                 <img src={Assets.medium} width="40px" height="40px" alt=""/>
                             </StyledLi2>
+                            <StyledLi2 href="https://defipulse.com/" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
                         </Row>                    
                     </div>
                 </Flex>

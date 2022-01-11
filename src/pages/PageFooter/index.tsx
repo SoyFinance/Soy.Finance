@@ -7,6 +7,7 @@ import Telegram from 'components/Svg/Icons/Telegram';
 import Twitter from 'components/Svg/Icons/Twitter';
 import Redit from 'components/Svg/Icons/Redit';
 import Facebook from 'components/Svg/Icons/Facebook';
+import Pulse from 'components/Svg/Icons/Pulse';
 import { useTranslation } from 'contexts/Localization';
 
 const StyledLi = styled.a`
@@ -141,8 +142,8 @@ const PageFooter = () => {
                         <StyledLi href="https://soy-finance.gitbook.io/soy-finance/safety-on-yields/erc-223-token-standard" target="_blank">{t('ERC 223 Token Standard')}</StyledLi>
                     </div>
                     <div>
-                        <Text align="center"><b>{t('Social Media')}</b></Text>
-                        <Spacer height="10px" />
+                        {/* <Text align="center"><b>{t('Social Media')}</b></Text>
+                        <Spacer height="10px" /> */}
                         <Row>
                             <StyledLi2 href="https://t.me/Soy_Finance" target="_blank"><Telegram /></StyledLi2>
                             <StyledLi2 href="https://twitter.com/Soy_Finance" target="_blank"><Twitter /></StyledLi2>
@@ -150,8 +151,9 @@ const PageFooter = () => {
                             <StyledLi2 href="https://www.facebook.com/Soy.Finance" target="_blank"><Facebook /></StyledLi2>
                             {/* <StyledLi2 href="https://soy-finance.medium.com/" target="_blank"><Medium/></StyledLi2> */}
                             <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
-                                <img src={Assets.medium} width="40px" height="40px" alt=""/>
+                                <img src={Assets.medium} width="38px" height="38px" alt=""/>
                             </StyledLi2>
+                            <StyledLi2 href="https://defipulse.com/" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
                         </Row>                    
                     </div>
                 </Flex>
