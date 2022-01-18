@@ -73,7 +73,7 @@ const PageFooter = () => {
                             <Spacer height="10px" />
                             <StyledLi href="https://callisto.network/soy-finance-soy-security-audit/" target="_blank">{t('Platform Audit Report')}</StyledLi>
                             <Spacer height="10px" />
-                            <StyledLi href="https://" target="_blank">{t('Bug Bounty Report (To come)')}</StyledLi>
+                            <StyledLi href="https://clo.click/SOY-Deck" target="_blank">{t('Bug Bounty Report (To come)')}</StyledLi>
                             <Spacer height="10px" />
                             <StyledLi href="https://soy-finance.medium.com/soy-finance-monetary-policy-vision-4f07a1b48372" target="_blank">{t('Monetary Policy')}</StyledLi>
                             <Spacer height="10px" />
@@ -136,7 +136,7 @@ const PageFooter = () => {
                         <Spacer height="10px" />
                         <StyledLi href="https://soy-finance.gitbook.io/soy-finance/safety-on-yields/soy-finance-security-audit" target="_blank">{t('Platform Audit Report')}</StyledLi>
                         <Spacer height="10px" />
-                        <StyledLi href="https://" target="_blank">{t('Bug Bounty Report (To come)')}</StyledLi>
+                        <StyledLi href="https://clo.click/SOY-Deck" target="_blank">{t('Bug Bounty Report (To come)')}</StyledLi>
                         <Spacer height="10px" />
                         <StyledLi href="https://soy-finance.gitbook.io/soy-finance/articles/monetary-policy-vision" target="_blank">{t('Monetary Policy')}</StyledLi>
                         <Spacer height="10px" />
