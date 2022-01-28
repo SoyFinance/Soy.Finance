@@ -45,7 +45,7 @@ const PageFooter = () => {
                         <Itemdiv>                            
                             <Text><b>{t('Soy Finance')}</b></Text>
                             <Spacer height="10px" />
-                            <StyledLi href="https://soy-finance.gitbook.io/soy-finance/miscellaneous/media-kit" target="_blank">{t('Tutorials')}</StyledLi>
+                            <StyledLi href="https://soy-finance.gitbook.io/soy-finance/miscellaneous/media-kit" target="_blank">{t('Media Kit')}</StyledLi>
                             <Spacer height="10px" />
                             <StyledLi href="/roadmap">{t('Roadmap')}</StyledLi>
                             <Spacer height="10px" />
@@ -112,7 +112,7 @@ const PageFooter = () => {
                     <div>
                         <Text><b>{t('Soy Finance')}</b></Text>
                         <Spacer height="10px" />
-                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/miscellaneous/media-kit" target="_blank">{t('Tutorials')}</StyledLi>
+                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/miscellaneous/media-kit" target="_blank">{t('Media Kit')}</StyledLi>
                         <Spacer height="10px" />
                         <StyledLi href="/roadmap">{t('Roadmap')}</StyledLi>
                         <Spacer height="10px" />
