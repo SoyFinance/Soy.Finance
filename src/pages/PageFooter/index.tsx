@@ -90,7 +90,7 @@ const PageFooter = () => {
                                 <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
                                     <img src={Assets.medium} width="40px" height="40px" alt=""/>
                                 </StyledLi2>
-                                <StyledLi2 href="https://defipulse.com/" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
+                                <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
                             </Row>                    
                         </Itemdiv>
                     </Row2>
@@ -154,7 +154,7 @@ const PageFooter = () => {
                             <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
                                 <img src={Assets.medium} width="38px" height="38px" alt=""/>
                             </StyledLi2>
-                            <StyledLi2 href="https://defipulse.com/" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
+                            <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
                         </Row>                    
                     </div>
                 </Flex>
