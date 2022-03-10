@@ -12,6 +12,8 @@ const langTitle = {
     'en-US': 'EN',
     'zh-CN': 'CH',
     'zh-TW': 'TW',
+    'ru-RU': 'RU',
+    'uk-UA': 'UK',
 }
 
 const Header: React.FC = () => {
@@ -52,6 +54,8 @@ const Header: React.FC = () => {
                             <NavDropdown.Item onClick={()=>handleChangeLang('en-US')}>EN</NavDropdown.Item>
                             <NavDropdown.Item onClick={()=>handleChangeLang('zh-CN')}>CH</NavDropdown.Item>
                             <NavDropdown.Item onClick={()=>handleChangeLang('zh-TW')}>TW</NavDropdown.Item>
+                            <NavDropdown.Item onClick={()=>handleChangeLang('ru-RU')}>RU</NavDropdown.Item>
+                            <NavDropdown.Item onClick={()=>handleChangeLang('uk-UA')}>UK</NavDropdown.Item>
                         </NavDropdown>
                     </Li>
                 </Nav>

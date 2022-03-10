@@ -15,7 +15,7 @@ const Intro = () => {
         window.scrollTo(0, 1.7*window.innerHeight);
     }
 
-    const isEn = currentLanguage.code === "en";
+    const isEn = currentLanguage.code === "en" || currentLanguage.code === "ru";
 
     return (
         <Container id="home">

@@ -1,2 +1,2 @@
 # website
-https://cryptobot.page
+https://soy.finance/
