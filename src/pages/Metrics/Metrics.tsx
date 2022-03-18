@@ -72,7 +72,7 @@ const Metrics = () => {
                                 <StyledText3>{t('*Via Callisto Bridge')}</StyledText3>:
                                 <StyledText2>{t('*Via Callisto Bridge')}</StyledText2>
                             }
-                            <StyledText>4</StyledText>
+                            <StyledText>5</StyledText>
                         </Div>
                     </SubFlex>
                 </Flex>
