@@ -79,13 +79,13 @@ const Text = styled.p`
     }
 `;
 const Title = styled.p<{color: string}>`
+    display: inline;
     color: ${({color}) => color};
     font-family: ${Theme.fonts.text};
     font-weight: 700;
     font-size: 73.5px;
     line-height: 88.2px;
     letter-spacing: 5%;
-    display: flex;
     @media screen and (max-width: 900px ) {
         font-size: 38px;
         line-height: 52px;
