@@ -7,6 +7,7 @@ import Community from 'pages/Community';
 import CommunityMob from './Community/communityMob';
 import PageFooter from './PageFooter';
 import Oneinch from './Oneinch/Oneinch';
+// import News from './News';
 import SoyToken from './SoyToken/soytoken';
 import OneToken from './OneToken/onetoken';
 import 'aos/dist/aos.css';
@@ -42,6 +43,7 @@ const Home: React.FC = () => {
             <Intro />
             <Metrics />
             <Oneinch />
+            {/* <News /> */}
             <WebDiv>
                 <Community />
             </WebDiv>

@@ -90,8 +90,17 @@ const PageFooter = () => {
                                 <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
                                     <img src={Assets.medium} width="40px" height="40px" alt=""/>
                                 </StyledLi2>
+                            </Row>
+                            <Spacer height="10px" />
+                            <Row>
+                                <StyledLi2 href="https://coinmarketcap.com/currencies/soy-finance/" target="_blank">
+                                    <img src={Assets.CMCIcon} width="40px" height="40px" alt=""/>
+                                </StyledLi2>
+                                <StyledLi2 href="https://www.coingecko.com/en/coins/soy-finance" target="_blank">
+                                    <img src={Assets.coingecko} width="40px" height="40px" alt=""/>
+                                </StyledLi2>
                                 <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
-                            </Row>                    
+                            </Row>
                         </Itemdiv>
                     </Row2>
                     <RightsdivMob>
@@ -154,8 +163,17 @@ const PageFooter = () => {
                             <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
                                 <img src={Assets.medium} width="38px" height="38px" alt=""/>
                             </StyledLi2>
+                        </Row>
+                        <Spacer height="10px" />
+                        <Row>
+                            <StyledLi2 href="https://coinmarketcap.com/currencies/soy-finance/" target="_blank">
+                                <img src={Assets.CMCIcon} width="40px" height="40px" alt=""/>
+                            </StyledLi2>
+                            <StyledLi2 href="https://www.coingecko.com/en/coins/soy-finance" target="_blank">
+                                <img src={Assets.coingecko} width="40px" height="40px" alt=""/>
+                            </StyledLi2>
                             <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
-                        </Row>                    
+                        </Row>             
                     </div>
                 </Flex>
                 <BkImage2 src={Assets.footerback} alt="" />

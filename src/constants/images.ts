@@ -43,8 +43,15 @@ import roadmap from 'assets/images/Roadmap.jpg'
 import soywhite from 'assets/images/whitesoy.png'
 import airback from 'assets/images/BG.png'
 import ufo from 'assets/images/UFO.png'
+import CMCIcon from 'assets/images/CMC.png'
 
 import medium from 'assets/images/Gitbook.svg'
+
+import news1 from 'assets/images/news1.png'
+import news2 from 'assets/images/news2.png'
+import news3 from 'assets/images/news3.png'
+import news4 from 'assets/images/news4.png'
+import coingecko from 'assets/images/coingecko.png'
 
 export const Assets = {
     logo,
@@ -92,5 +99,11 @@ export const Assets = {
     soywhite,
     airback,
     ufo,
-    medium
+    medium,
+    CMCIcon,
+    coingecko,
+    news1,
+    news2,
+    news3,
+    news4,
 }
