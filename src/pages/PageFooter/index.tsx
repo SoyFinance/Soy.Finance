@@ -92,7 +92,7 @@ const PageFooter = () => {
                                 </StyledLi2>
                             </Row>
                             <Spacer height="10px" />
-                            <Row>
+                            <Row3>
                                 <StyledLi2 href="https://coinmarketcap.com/currencies/soy-finance/" target="_blank">
                                     <img src={Assets.CMCIcon} width="40px" height="40px" alt=""/>
                                 </StyledLi2>
@@ -100,7 +100,7 @@ const PageFooter = () => {
                                     <img src={Assets.coingecko} width="40px" height="40px" alt=""/>
                                 </StyledLi2>
                                 <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
-                            </Row>
+                            </Row3>
                         </Itemdiv>
                     </Row2>
                     <RightsdivMob>
@@ -165,7 +165,7 @@ const PageFooter = () => {
                             </StyledLi2>
                         </Row>
                         <Spacer height="10px" />
-                        <Row>
+                        <Row3>
                             <StyledLi2 href="https://coinmarketcap.com/currencies/soy-finance/" target="_blank">
                                 <img src={Assets.CMCIcon} width="40px" height="40px" alt=""/>
                             </StyledLi2>
@@ -173,7 +173,7 @@ const PageFooter = () => {
                                 <img src={Assets.coingecko} width="40px" height="40px" alt=""/>
                             </StyledLi2>
                             <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
-                        </Row>             
+                        </Row3>             
                     </div>
                 </Flex>
                 <BkImage2 src={Assets.footerback} alt="" />
@@ -307,6 +307,9 @@ const Flex = styled.div`
 const Row = styled.div`
     display: flex;
     justify-content: space-between;
+`
+const Row3 = styled.div`
+    display: flex;
 `
 const Row2 = styled.div`
     width: 100%;
