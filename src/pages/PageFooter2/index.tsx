@@ -97,13 +97,13 @@ const PageFooter = () => {
                             <Spacer height="10px" />
                             <Row3>
                                 <StyledLi2 href="https://coinmarketcap.com/currencies/soy-finance/" target="_blank">
-                                    <img src={Assets.CMCIcon} width="38px" height="38px" alt=""/>
+                                    <img src={Assets.CMCIcon} width="40px" height="40px" alt=""/>
                                 </StyledLi2>
                                 <StyledLi2 href="https://www.coingecko.com/en/coins/soy-finance" target="_blank">
-                                    <img src={Assets.coingecko} width="38px" height="38px" alt=""/>
+                                    <img src={Assets.coingecko} width="40px" height="40px" alt=""/>
                                 </StyledLi2>
                                 <StyledLi2 href="https://coinpaprika.com/coin/soy-soy-finance/" target="_blank">
-                                    <img src={Assets.coinpap} width="38px" height="38px" alt=""/>
+                                    <img src={Assets.coinpap} width="40px" height="40px" alt=""/>
                                 </StyledLi2>
                                 <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank" ><Pulse width="38px" height="38px"/></StyledLi2>
                             </Row3>                     
