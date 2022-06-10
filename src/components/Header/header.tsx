@@ -45,7 +45,7 @@ const Header: React.FC = () => {
                         </NavDropdown>
                     </Li>
                     <Li>
-                        <Nav.Link href="https://callistobridge.netlify.app/" target="_blank">{t('Callisto Bridge')}</Nav.Link>
+                        <Nav.Link href="https://bridge.soy.finance/" target="_blank">{t('SOY Bridge')}</Nav.Link>
                     </Li>
                     <LiButton href="https://app.soy.finance/#/swap" target="_blank">
                         {t('Launch Soy Finance')}
