@@ -51,7 +51,7 @@ import news1 from 'assets/images/news1.png'
 import news2 from 'assets/images/news2.png'
 import news3 from 'assets/images/news3.png'
 import news4 from 'assets/images/news4.png'
-import coingecko from 'assets/images/Coingecko.png'
+import coingecko from 'assets/images/coingecko.png'
 import coinpap from 'assets/images/Coinpaprika.png'
 
 export const Assets = {
