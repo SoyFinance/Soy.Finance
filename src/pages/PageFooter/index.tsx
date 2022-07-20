@@ -72,13 +72,13 @@ const PageFooter = () => {
                         <Itemdiv2>
                             <Text><b>{t('Documentation')}</b></Text>
                             <Spacer height="10px" />
-                            <StyledLi href="https://callisto.network/soy-finance-soy-security-audit/" target="_blank">{t('Platform Audit Report')}</StyledLi>
+                            <StyledLi href="https://soy-finance.gitbook.io/soy-finance/soy-products/safety-on-yields/soy-finance-security-audit/" target="_blank">{t('Platform Audit Report')}</StyledLi>
                             <Spacer height="10px" />
                             <StyledLi href="https://clo.click/SOY-Deck" target="_blank">{t('Investor Deck')}</StyledLi>
                             <Spacer height="10px" />
-                            <StyledLi href="https://soy-finance.medium.com/soy-finance-monetary-policy-vision-4f07a1b48372" target="_blank">{t('Monetary Policy')}</StyledLi>
+                            <StyledLi href="https://soy-finance.gitbook.io/soy-finance/soy-products/soy-token/monetary-policy-vision/" target="_blank">{t('Monetary Policy')}</StyledLi>
                             <Spacer height="10px" />
-                            <StyledLi href="https://callisto.network/erc223-token-standard/" target="_blank">{t('ERC 223 Token Standard')}</StyledLi>
+                            <StyledLi href="https://soy-finance.gitbook.io/soy-finance/soy-products/safety-on-yields/erc-223-token-standard/" target="_blank">{t('ERC 223 Token Standard')}</StyledLi>
                         </Itemdiv2>
                         <Itemdiv>
                             {/* <Text align="center"><b>{t('Social Media')}</b></Text>
@@ -148,13 +148,13 @@ const PageFooter = () => {
                     <div>
                         <Text><b>{t('Documentation')}</b></Text>
                         <Spacer height="10px" />
-                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/safety-on-yields/soy-finance-security-audit" target="_blank">{t('Platform Audit Report')}</StyledLi>
+                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/soy-products/safety-on-yields/soy-finance-security-audit" target="_blank">{t('Platform Audit Report')}</StyledLi>
                         <Spacer height="10px" />
                         <StyledLi href="https://clo.click/SOY-Deck" target="_blank">{t('Investor Deck')}</StyledLi>
                         <Spacer height="10px" />
-                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/articles/monetary-policy-vision" target="_blank">{t('Monetary Policy')}</StyledLi>
+                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/soy-products/soy-token/monetary-policy-vision" target="_blank">{t('Monetary Policy')}</StyledLi>
                         <Spacer height="10px" />
-                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/safety-on-yields/erc-223-token-standard" target="_blank">{t('ERC 223 Token Standard')}</StyledLi>
+                        <StyledLi href="https://soy-finance.gitbook.io/soy-finance/soy-products/safety-on-yields/erc-223-token-standard" target="_blank">{t('ERC 223 Token Standard')}</StyledLi>
                     </div>
                     <div>
                         {/* <Text align="center"><b>{t('Social Media')}</b></Text>
