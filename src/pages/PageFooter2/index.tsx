@@ -8,6 +8,7 @@ import Twitter from 'components/Svg/Icons/Twitter';
 import Redit from 'components/Svg/Icons/Redit';
 import Facebook from 'components/Svg/Icons/Facebook';
 import Pulse from 'components/Svg/Icons/Pulse';
+import Gitbook from 'components/Svg/Icons/Gitbook';
 import { useTranslation } from 'contexts/Localization';
 
 const StyledLi = styled.a`
@@ -91,7 +92,8 @@ const PageFooter = () => {
                                 <StyledLi2 href="https://www.reddit.com/r/Soy_Finance/" target="_blank"><Redit /></StyledLi2>
                                 <StyledLi2 href="https://www.facebook.com/Soy.Finance" target="_blank"><Facebook /></StyledLi2>
                                 <StyledLi2 href="https://soy-finance.gitbook.io" target="_blank">
-                                    <img src={Assets.medium} width="40px" height="40px" alt=""/>
+                                    {/* <img src={Assets.medium} width="40px" height="40px" alt=""/> */}
+                                    <Gitbook />
                                 </StyledLi2>
                             </Row> 
                             <Spacer height="10px" />
@@ -166,7 +168,8 @@ const PageFooter = () => {
                             <StyledLi2 href="https://www.reddit.com/r/Soy_Finance/" target="_blank"><Redit /></StyledLi2>
                             <StyledLi2 href="https://www.facebook.com/Soy.Finance" target="_blank"><Facebook /></StyledLi2>
                             <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
-                                <img src={Assets.medium} width="40px" height="40px" alt=""/>
+                                {/* <img src={Assets.medium} width="40px" height="40px" alt=""/> */}
+                                <Gitbook />
                             </StyledLi2>
                         </Row>
                         <Spacer height="10px" />

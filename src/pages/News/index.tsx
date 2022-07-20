@@ -3,11 +3,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'contexts/Localization';
 import Spacer from 'components/Spacer';
+import { useGetBurnedSoy, useGetStakingAPR, useGetFarmsApr } from 'hooks/useMetrics';
 import CardGrid from './cardGrid';
 import FirstCard, { BurnCard, FarmCard, StakingCard } from './cards';
 
 const News = () => {
   const { t } = useTranslation()
+  const burnedSoy = useGetBurnedSoy()
+  const stakingAPR = useGetStakingAPR()
+  const data = useGetFarmsApr()
+
   return (
     <Container>
       <Line />
@@ -17,9 +22,9 @@ const News = () => {
       </Title>
       <CardGrid>
         <FirstCard />
-        <StakingCard />
-        <FarmCard />
-        <BurnCard />
+        <StakingCard apr = {stakingAPR}/>
+        <FarmCard data = {data}/>
+        <BurnCard burnedSoy = {burnedSoy}/>
       </CardGrid>
     </Container>
   )
